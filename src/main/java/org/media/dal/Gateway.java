@@ -20,8 +20,8 @@ public class Gateway {
     }
 
     public static String url= "jdbc:mysql://<HOST>:<PORT>/<DB>";
-    private static final String user = "user";
-    private static final String pass = "pass";
+    private static final String user = System.getProperty("mysql.user.name");
+    private static final String pass = System.getProperty("mysql.user.pass");
     private static final String className = "com.mysql.jdbc.Driver";
 
     public static synchronized Connection getConnection() throws SQLException {

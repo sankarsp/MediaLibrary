@@ -14,7 +14,11 @@ public class TestGateway {
 
     @Before
     public void initTest(){
-        Gateway.getConnection();
+        try {
+            Gateway.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public void testConnection(){
         Assert.assertNotNull(aConnection);
