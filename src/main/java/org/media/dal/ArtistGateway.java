@@ -29,4 +29,8 @@ public class ArtistGateway extends Gateway{
     public Artist getAnArtist(Long id) {
         return new Artist();
     }
+
+    public Long insert(Artist anArtist) {
+        return 04l;
+    }
 }
