@@ -2,6 +2,7 @@ package org.media.dal;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,12 +21,18 @@ public class TestGateway {
             e.printStackTrace();
         }
     }
-    public void testConnection(){
+   @Test
+   public void testConnection(){
         Assert.assertNotNull(aConnection);
         try {
             Assert.assertFalse(aConnection.isClosed());
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test public void testCunnectionUrl(){
+        Assert.assertNotNull(Gateway.url);
+        Assert.assertEquals("jdbc:mysql://localhost:3306/medialib", Gateway.url);
     }
 }
