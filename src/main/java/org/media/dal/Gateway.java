@@ -19,7 +19,10 @@ public class Gateway {
         return aConnection;
     }
 
-    public static String url= "jdbc:mysql://<HOST>:<PORT>/<DB>";
+    public static String url= "jdbc:mysql://"+
+            System.getProperty("mysql.host")+":"+
+            System.getProperty("mysql.port")+"/"+
+            System.getProperty("mysql.db");
     private static final String user = System.getProperty("mysql.user.name");
     private static final String pass = System.getProperty("mysql.user.pass");
     private static final String className = "com.mysql.jdbc.Driver";
