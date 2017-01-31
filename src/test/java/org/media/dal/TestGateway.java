@@ -16,13 +16,13 @@ public class TestGateway {
     @Before
     public void initTest(){
         try {
-            Gateway.getConnection();
+            aConnection = Gateway.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
    @Test
-   public void testConnection(){
+   public void testConnectionOpen(){
         Assert.assertNotNull(aConnection);
         try {
             Assert.assertFalse(aConnection.isClosed());
