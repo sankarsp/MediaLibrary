@@ -4,15 +4,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.media.TestBase;
 
+import java.sql.Connection;
+
 /**
  * Created by shantonu on 1/31/17.
  */
 public class ArtistGatewayTest extends TestBase {
 
-    private Artist anArtist;
+    private ArtistGateway anArtistGateway;
+    private Connection conneciton;
     @Before
     public void inittest(){
-        anArtist = new Artist();
+        conneciton = Gateway.getConn();
+        anArtistGateway = new ArtistGateway(conneciton);
     }
 
     @Test

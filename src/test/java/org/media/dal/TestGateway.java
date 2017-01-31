@@ -14,15 +14,12 @@ public class TestGateway {
     private Connection aConnection;
 
     @Before
-    public void initTest(){
-        try {
-            aConnection = Gateway.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public void initTest() {
+        aConnection = Gateway.getConn();
     }
-   @Test
-   public void testConnectionOpen(){
+
+    @Test
+    public void testConnectionOpen() {
         Assert.assertNotNull(aConnection);
         try {
             Assert.assertFalse(aConnection.isClosed());
@@ -31,7 +28,8 @@ public class TestGateway {
         }
     }
 
-    @Test public void testCunnectionUrl(){
+    @Test
+    public void testCunnectionUrl() {
         Assert.assertNotNull(Gateway.url);
         Assert.assertEquals("jdbc:mysql://localhost:3306/medialib", Gateway.url);
     }
