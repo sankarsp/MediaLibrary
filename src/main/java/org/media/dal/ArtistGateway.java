@@ -30,7 +30,10 @@ public class ArtistGateway extends Gateway{
 
         return new Artist();
     }
-    public Artist getAnArtist(Long id) {
+    public Artist getAnArtist(Long id) throws SQLException {
+        String q = "SELECT * from t_Artist where ID="+id.toString();
+
+        runQuerry(q);
         return new Artist();
     }
 
