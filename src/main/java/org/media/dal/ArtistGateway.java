@@ -23,7 +23,11 @@ public class ArtistGateway extends Gateway{
         return createObjects(runQuerry(query),Artist.class);
     }
 
-    public Artist getAnArtist(String name) {
+    public Artist getAnArtist(String name) throws SQLException {
+        String q = "SELECT * from t_Artist where NAME='"+name+"'";
+
+        runQuerry(q);
+
         return new Artist();
     }
     public Artist getAnArtist(Long id) {
