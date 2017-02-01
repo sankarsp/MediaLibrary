@@ -30,7 +30,11 @@ public class ArtistGateway extends Gateway{
         return new Artist();
     }
 
-    public Long insert(Artist anArtist) {
-        return 04l;
+    public Long insert(Artist anArtist) throws SQLException {
+        String q = "INSERT INTO t_Artist VALUES ("+anArtist.getId()+", \""+anArtist.getName()+"\");";
+
+        runQuerry(q);
+
+        return anArtist.getId();
     }
 }

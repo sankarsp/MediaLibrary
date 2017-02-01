@@ -33,7 +33,12 @@ public class ArtistGatewayTest extends TestBase {
         artist = anArtistGateway.getAnArtist(1l);
         Assert.assertEquals(Long.valueOf(1), artist.getId());
 
-        Long id = anArtistGateway.insert(new Artist(99, "shantonu"));
+        Long id = null;
+        try {
+            id = anArtistGateway.insert(new Artist(99l, "shantonu"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         artist = anArtistGateway.getAnArtist(id);
         Assert.assertEquals(Long.valueOf(1), artist.getId());
 
