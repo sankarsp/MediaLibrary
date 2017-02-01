@@ -28,9 +28,18 @@ public class ArtistGatewayTest extends TestBase {
 
     @Test
     public void testGetAnArtistFromDB(){
-        Artist artist = anArtistGateway.getAnArtist("Name");
+        Artist artist = null;
+        try {
+            artist = anArtistGateway.getAnArtist("Name");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals("Name", artist.getName());
-        artist = anArtistGateway.getAnArtist(1l);
+        try {
+            artist = anArtistGateway.getAnArtist(1l);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(Long.valueOf(1), artist.getId());
 
         Long id = null;
@@ -39,7 +48,11 @@ public class ArtistGatewayTest extends TestBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        artist = anArtistGateway.getAnArtist(id);
+        try {
+            artist = anArtistGateway.getAnArtist(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(Long.valueOf(1), artist.getId());
 
     }
