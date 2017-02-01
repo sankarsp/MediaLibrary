@@ -68,4 +68,9 @@ public class Gateway {
         return pt.executeQuery(query);
     }
 
+    protected static Long getNextId(String tableName){
+        return 0l;
+
+    }
+
 }
