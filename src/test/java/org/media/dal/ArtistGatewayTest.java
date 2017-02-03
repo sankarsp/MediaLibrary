@@ -62,6 +62,9 @@ public class ArtistGatewayTest extends TestBase {
         try {
             List<Artist> allArtist = anArtistGateway.getAllArtist();
             Assert.assertTrue(allArtist.size()>0);
+            for(Artist artist : allArtist){
+                Assert.assertEquals(anArtistGateway.getAnArtist(artist.getId()), artist);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
