@@ -80,6 +80,15 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testDeleteAnArtistFromDB(){
 
+        try {
+            anArtistGateway.remove(1l);
+
+            Assert.assertNull(anArtistGateway.getAnArtist(1l));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
     @Test
     public void testUpdateAnArtistFromDB(){
