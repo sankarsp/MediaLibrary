@@ -30,13 +30,13 @@ public class ArtistGatewayTest extends TestBase {
     public void testGetAnArtistFromDB(){
         Artist artist = null;
         try {
-            artist = anArtistGateway.getAnArtist("Name");
+            artist = anArtistGateway.view("Name");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         Assert.assertEquals("Name", artist.getName());
         try {
-            artist = anArtistGateway.getAnArtist(1l);
+            artist = anArtistGateway.view(1l);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -49,7 +49,7 @@ public class ArtistGatewayTest extends TestBase {
             e.printStackTrace();
         }
         try {
-            artist = anArtistGateway.getAnArtist(id);
+            artist = anArtistGateway.view(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -60,10 +60,10 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testGetAllArtistFromDB(){
         try {
-            List<Artist> allArtist = anArtistGateway.getAllArtist();
+            List<Artist> allArtist = anArtistGateway.viewAll();
             Assert.assertTrue(allArtist.size()>0);
             for(Artist artist : allArtist){
-                Assert.assertEquals(anArtistGateway.getAnArtist(artist.getId()), artist);
+                Assert.assertEquals(anArtistGateway.view(artist.getId()), artist);
             }
 
         } catch (SQLException e) {
@@ -88,7 +88,7 @@ public class ArtistGatewayTest extends TestBase {
         try {
             anArtistGateway.insert(new Artist(testId,name));
             anArtistGateway.remove(1l);
-            Assert.assertNull(anArtistGateway.getAnArtist(1l));
+            Assert.assertNull(anArtistGateway.view(1l));
 
         } catch (SQLException e) {
             e.printStackTrace();

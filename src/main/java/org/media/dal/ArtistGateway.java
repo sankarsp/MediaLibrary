@@ -18,19 +18,19 @@ public class ArtistGateway extends Gateway{
         this.aConnection = conneciton;
     }
 
-    public List<Artist> getAllArtist() throws SQLException, InvocationTargetException, IntrospectionException, InstantiationException, IllegalAccessException {
+    public List<Artist> viewAll() throws SQLException, InvocationTargetException, IntrospectionException, InstantiationException, IllegalAccessException {
         String query = "select 8 from t_Artist";
         return createObjects(runQuerry(query),Artist.class);
     }
 
-    public Artist getAnArtist(String name) throws SQLException {
+    public Artist view(String name) throws SQLException {
         String q = "SELECT * from t_Artist where NAME='"+name+"'";
 
         runQuerry(q);
 
         return new Artist();
     }
-    public Artist getAnArtist(Long id) throws SQLException {
+    public Artist view(Long id) throws SQLException {
         String q = "SELECT * from t_Artist where ID="+id.toString();
 
         runQuerry(q);
