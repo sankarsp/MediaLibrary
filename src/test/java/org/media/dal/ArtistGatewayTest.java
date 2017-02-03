@@ -80,9 +80,11 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testDeleteAnArtistFromDB(){
 
+        Long testId = 1l;
+        String name = "sha";
         try {
+            anArtistGateway.insert(new Artist(testId,name));
             anArtistGateway.remove(1l);
-
             Assert.assertNull(anArtistGateway.getAnArtist(1l));
 
         } catch (SQLException e) {
