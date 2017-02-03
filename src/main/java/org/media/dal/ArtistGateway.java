@@ -48,4 +48,8 @@ public class ArtistGateway extends Gateway{
     public void remove(long l) {
 
     }
+
+    public long update(Artist anArtist) {
+        return anArtist.getId();
+    }
 }

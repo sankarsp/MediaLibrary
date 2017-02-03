@@ -101,7 +101,7 @@ public class ArtistGatewayTest extends TestBase {
         try {
             anArtistGateway.insert(anArtist);
             anArtist = new Artist(1l,"sarker");
-            anArtistGateway.update(anArtist);
+            assertEquals(1l,anArtistGateway.update(anArtist));
             assertEquals(anArtist,anArtistGateway.view(1l));
 
         } catch (SQLException e) {
