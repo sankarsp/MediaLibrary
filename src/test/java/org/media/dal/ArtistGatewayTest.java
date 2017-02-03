@@ -97,6 +97,8 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testUpdateAnArtistFromDB(){
+        Artist anArtist = new Artist(1l,"sha");
+        anArtistGateway.update(new)
 
     }
     @Test
