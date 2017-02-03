@@ -98,7 +98,15 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testUpdateAnArtistFromDB(){
         Artist anArtist = new Artist(1l,"sha");
-        anArtistGateway.update(new)
+        try {
+            anArtistGateway.insert(anArtist);
+            anArtist = new Artist(1l,"sarker");
+            anArtistGateway.update(anArtist);
+            assertEquals(anArtist,anArtistGateway.view(1l));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
     @Test
