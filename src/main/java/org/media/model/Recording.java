@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by shantonu on 2/4/17.
  */
-public class Track {
+public class Recording {
     private Long id;
     private String title;
     private Date releaseDate;
@@ -13,8 +13,8 @@ public class Track {
     private Long labelId;
 
 
-    public Track(){}
-    public Track(Long id, String title, Date releaseDate, Long artistId, Long labelId) {
+    public Recording(){}
+    public Recording(Long id, String title, Date releaseDate, Long artistId, Long labelId) {
         this.id = id;
         this.title = title;
         this.releaseDate = releaseDate;
