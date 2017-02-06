@@ -15,7 +15,7 @@ public class TestGateway {
 
     @Before
     public void initTest() {
-        aConnection = Gateway.getConn();
+        aConnection = ConnectionManager.getConn();
     }
 
     @Test
@@ -30,7 +30,7 @@ public class TestGateway {
 
     @Test
     public void testCunnectionUrl() {
-        Assert.assertNotNull(Gateway.url);
-        Assert.assertEquals("jdbc:mysql://localhost:3306/medialib", Gateway.url);
+        Assert.assertNotNull(ConnectionManager.url);
+        Assert.assertEquals("jdbc:mysql://localhost:3306/medialib", ConnectionManager.url);
     }
 }
