@@ -19,11 +19,11 @@ import java.util.List;
 public class ArtistGatewayTest extends TestBase {
 
     private ArtistGateway anArtistGateway;
-    private Connection conneciton;
+
     @Before
     public void inittest(){
-        conneciton = ConnectionManager.getConn();
-        anArtistGateway = new ArtistGateway(conneciton);
+
+        anArtistGateway = new ArtistGateway(aConnection);
     }
 
     @Test
