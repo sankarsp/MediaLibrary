@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class Gateway {
 
-    private static Connection aConnection = null;
-    Gateway(){}
+
+    public Gateway(){}
     public static <T> List<T> createObjects(ResultSet resultSet, Class<T> tClass) throws
             SQLException, IllegalAccessException, InstantiationException, IntrospectionException, InvocationTargetException {
         List<T> listImtes = new ArrayList<T>();
@@ -36,35 +36,8 @@ public class Gateway {
         }
         return listImtes;
     }
-    public static Connection getConn(){
-        if(aConnection==null){
-            try {
-                aConnection = getConnection();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return aConnection;
-    }
-
-    public static String url= "jdbc:mysql://"+
-            System.getProperty("mysql.host")+":"+
-            System.getProperty("mysql.port")+"/"+
-            System.getProperty("mysql.db");
-    private static final String user = System.getProperty("mysql.user.name");
-    private static final String pass = System.getProperty("mysql.user.pass");
-    private static final String className = "com.mysql.jdbc.Driver";
-
-    private static synchronized Connection getConnection() throws SQLException {
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        return DriverManager.getConnection(url, user, pass);
-    }
-    private static synchronized Connection getLegacyConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        Class.forName(className).newInstance();
-        return DriverManager.getConnection(url,user,pass);
-    }
     protected ResultSet runQuerry(String query) throws SQLException {
-        Statement pt = getConn().createStatement();
+        Statement pt = ConnectionManager.getConn().createStatement();
         return pt.executeQuery(query);
     }
 
