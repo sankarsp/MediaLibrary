@@ -3,6 +3,7 @@ package org.media.dal;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.media.TestBase;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,14 +11,7 @@ import java.sql.SQLException;
 /**
  * Created by shantonu on 1/27/17.
  */
-public class TestGateway {
-    private Connection aConnection;
-
-    @Before
-    public void initTest() {
-        aConnection = ConnectionManager.getConn();
-    }
-
+public class TestGateway extends TestBase{
     @Test
     public void testConnectionOpen() {
         Assert.assertNotNull(aConnection);
