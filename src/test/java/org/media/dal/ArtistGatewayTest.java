@@ -22,7 +22,7 @@ public class ArtistGatewayTest extends TestBase {
     private Connection conneciton;
     @Before
     public void inittest(){
-        conneciton = Gateway.getConn();
+        conneciton = ConnectionManager.getConn();
         anArtistGateway = new ArtistGateway(conneciton);
     }
 
