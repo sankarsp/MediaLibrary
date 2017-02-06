@@ -10,9 +10,9 @@ import java.sql.SQLException;
 public class ConnectionManager {
 
     private static Connection aConnection = null;
-    public static String url= "jdbc:mysql://"+
-            System.getProperty("mysql.host")+":"+
-            System.getProperty("mysql.port")+"/"+
+    public static String url = "jdbc:mysql://" +
+            System.getProperty("mysql.host") + ":" +
+            System.getProperty("mysql.port") + "/" +
             System.getProperty("mysql.db");
     private static final String user = System.getProperty("mysql.user.name");
     private static final String pass = System.getProperty("mysql.user.pass");
@@ -22,12 +22,14 @@ public class ConnectionManager {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         return DriverManager.getConnection(url, user, pass);
     }
+
     private static synchronized Connection getLegacyConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class.forName(className).newInstance();
-        return DriverManager.getConnection(url,user,pass);
+        return DriverManager.getConnection(url, user, pass);
     }
-    public static Connection getConn(){
-        if(aConnection==null){
+
+    public static Connection getConn() {
+        if (aConnection == null) {
             try {
                 aConnection = getConnection();
             } catch (SQLException e) {

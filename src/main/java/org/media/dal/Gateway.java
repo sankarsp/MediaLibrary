@@ -12,10 +12,10 @@ import java.util.List;
 /**
  * Created by shantonu on 1/27/17.
  */
-public class Gateway {
+public abstract class Gateway {
+    public Gateway() {
+    }
 
-
-    public Gateway(){}
     public static <T> List<T> createObjects(ResultSet resultSet, Class<T> tClass) throws
             SQLException, IllegalAccessException, InstantiationException, IntrospectionException, InvocationTargetException {
         List<T> listImtes = new ArrayList<T>();
@@ -36,12 +36,13 @@ public class Gateway {
         }
         return listImtes;
     }
+
     protected ResultSet runQuerry(String query) throws SQLException {
         Statement pt = ConnectionManager.getConn().createStatement();
         return pt.executeQuery(query);
     }
 
-    protected static Long getNextId(String tableName){
+    protected static Long getNextId(String tableName) {
         return 0l;
 
     }
