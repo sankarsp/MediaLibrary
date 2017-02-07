@@ -1,4 +1,4 @@
-package org.media.dal;
+package org.media.core;
 
 import java.util.List;
 

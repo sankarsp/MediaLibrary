@@ -1,5 +1,6 @@
 package org.media.dal;
 
+import org.media.core.Gatewayable;
 import org.media.model.Genre;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class GenreGateway implements Gatewayable<Genre>{
+public class GenreGateway implements Gatewayable<Genre> {
 
 
     @Override
