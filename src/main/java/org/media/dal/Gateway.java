@@ -1,5 +1,7 @@
 package org.media.dal;
 
+import org.media.dal.gateways.ConnectionManager;
+
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;

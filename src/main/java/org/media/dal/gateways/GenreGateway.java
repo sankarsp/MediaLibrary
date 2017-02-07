@@ -1,4 +1,4 @@
-package org.media.dal;
+package org.media.dal.gateways;
 
 import org.media.core.Gatewayable;
 import org.media.model.Genre;

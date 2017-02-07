@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.media.TestBase;
+import org.media.dal.gateways.ArtistGateway;
 import org.media.model.Artist;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 

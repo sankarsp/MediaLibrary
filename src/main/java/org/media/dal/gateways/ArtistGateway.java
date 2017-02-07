@@ -1,5 +1,6 @@
-package org.media.dal;
+package org.media.dal.gateways;
 
+import org.media.dal.Gateway;
 import org.media.model.Artist;
 
 import java.beans.IntrospectionException;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * Created by shantonu on 1/31/17.
  */
-public class ArtistGateway extends Gateway{
+public class ArtistGateway extends Gateway {
     private Connection aConnection;
     public ArtistGateway(Connection conneciton) {
         super();

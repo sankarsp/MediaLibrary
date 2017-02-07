@@ -1,7 +1,7 @@
 package org.media;
 
 import org.junit.BeforeClass;
-import org.media.dal.ConnectionManager;
+import org.media.dal.gateways.ConnectionManager;
 
 import java.sql.Connection;
 
