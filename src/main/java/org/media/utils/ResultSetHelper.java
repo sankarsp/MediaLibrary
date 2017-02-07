@@ -1,6 +1,6 @@
-package org.media.dal;
+package org.media.utils;
 
-import org.media.dal.gateways.ConnectionManager;
+import org.media.dal.ConnectionManager;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -14,8 +14,8 @@ import java.util.List;
 /**
  * Created by shantonu on 1/27/17.
  */
-public abstract class Gateway {
-    public Gateway() {
+public class ResultSetHelper {
+    public ResultSetHelper() {
     }
 
     public static <T> List<T> createObjects(ResultSet resultSet, Class<T> tClass) throws

@@ -1,4 +1,4 @@
-package org.media.dal.gateways;
+package org.media.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

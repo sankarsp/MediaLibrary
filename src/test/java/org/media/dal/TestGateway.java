@@ -3,7 +3,6 @@ package org.media.dal;
 import org.junit.Assert;
 import org.junit.Test;
 import org.media.TestBase;
-import org.media.dal.gateways.ConnectionManager;
 
 import java.sql.SQLException;
 
