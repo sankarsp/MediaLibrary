@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import static org.media.utils.ResultSetHelper.getAsList;
-import static org.media.utils.ResultSetHelper.runQuerry;
+
 
 /**
  * Created by ssarker on 2/5/2017.
