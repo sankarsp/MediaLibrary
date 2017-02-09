@@ -10,15 +10,5 @@ import java.util.Properties;
  */
 public class App {
 
-    public static void loadProperties(){
-        Properties p = new Properties();
-        try {
-            p.load(new FileInputStream(new File("src/main/resources/app.properties")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for(String k:p.stringPropertyNames()){
-            System.setProperty(k,p.getProperty(k));
-        }
-    }
+
 }
