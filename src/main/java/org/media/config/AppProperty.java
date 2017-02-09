@@ -10,9 +10,17 @@ import java.util.Properties;
  */
 public class AppProperty {
     public static void loadProperties(){
+        final String propertyFolder="src/main/resources/";
+        load("src/main/resources/app.properties");
+        load("src/test/resources/test.properties");
+
+
+    }
+
+    private static void load(String fileName){
         Properties p = new Properties();
         try {
-            p.load(new FileInputStream(new File("src/main/resources/app.properties")));
+            p.load(new FileInputStream(new File(fileName)));
         } catch (IOException e) {
             e.printStackTrace();
         }
