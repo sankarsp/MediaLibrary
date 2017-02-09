@@ -1,9 +1,16 @@
 package org.media.dal.gateways;
 
 import org.media.core.Gateway;
+import org.media.model.Artist;
 import org.media.model.Genre;
 
+import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 import java.util.List;
+
+import static org.media.utils.ResultSetHelper.getAsList;
+import static org.media.utils.ResultSetHelper.runQuerry;
 
 /**
  * Created by ssarker on 2/5/2017.
@@ -13,7 +20,22 @@ public class GenreGateway implements Gateway<Genre> {
 
     @Override
     public List<Genre> viewAll() {
-        return null;
+        String query = "select* from t_Genre";
+        List<Genre> all = null;
+        try {
+            all= getAsList(runQuerry(query),Genre.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return all;
     }
 
     @Override
