@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.media.TestBase;
-import org.media.dal.gateways.ArtistResultSetHelper;
+import org.media.dal.gateways.ArtistGateway;
 import org.media.model.Artist;
 
 import java.beans.IntrospectionException;
@@ -16,14 +16,14 @@ import java.util.List;
 /**
  * Created by shantonu on 1/31/17.
  */
-public class ArtistResultSetHelperTest extends TestBase {
+public class ArtistGatewayTest extends TestBase {
 
-    private ArtistResultSetHelper anArtistGateway;
+    private ArtistGateway anArtistGateway;
 
     @Before
     public void inittest(){
 
-        anArtistGateway = new ArtistResultSetHelper(aConnection);
+        anArtistGateway = new ArtistGateway(aConnection);
     }
 
     @Test

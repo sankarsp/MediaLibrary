@@ -1,6 +1,8 @@
 package org.media.dal.gateways;
 
-import org.media.utils.ResultSetHelper;
+import static org.media.utils.ResultSetHelper.*;
+
+import org.media.core.Gatewayable;
 import org.media.model.Artist;
 
 import java.beans.IntrospectionException;
@@ -12,9 +14,9 @@ import java.util.List;
 /**
  * Created by shantonu on 1/31/17.
  */
-public class ArtistResultSetHelper extends ResultSetHelper {
+public class ArtistGateway implements Gatewayable<Artist> {
     private Connection aConnection;
-    public ArtistResultSetHelper(Connection conneciton) {
+    public ArtistGateway(Connection conneciton) {
         super();
         this.aConnection = conneciton;
     }
@@ -38,6 +40,21 @@ public class ArtistResultSetHelper extends ResultSetHelper {
         return new Artist();
     }
 
+    @Override
+    public Long Insert(Artist artist) {
+        return null;
+    }
+
+    @Override
+    public void remove(Long id) {
+
+    }
+
+    @Override
+    public void remove(Artist artist) {
+
+    }
+
     public Long insert(Artist anArtist) throws SQLException {
         String q = "INSERT INTO t_Artist VALUES ("+anArtist.getId()+", \""+anArtist.getName()+"\");";
 
@@ -50,7 +67,7 @@ public class ArtistResultSetHelper extends ResultSetHelper {
 
     }
 
-    public long update(Artist anArtist) {
+    public Long update(Artist anArtist) {
         return anArtist.getId();
     }
 }

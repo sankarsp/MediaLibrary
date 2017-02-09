@@ -39,7 +39,7 @@ public class ResultSetHelper {
         return listImtes;
     }
 
-    protected ResultSet runQuerry(String query) throws SQLException {
+    public static ResultSet runQuerry(String query) throws SQLException {
         Statement pt = ConnectionManager.getConn().createStatement();
         return pt.executeQuery(query);
     }
