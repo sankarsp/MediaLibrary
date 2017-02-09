@@ -34,11 +34,7 @@ public class ArtistGatewayTest extends TestBase {
         assertEquals(Long.valueOf(1), artist.getID());
 
         Long id = null;
-        try {
-            id = anArtistGateway.insert(new Artist(99l, "shantonu"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        id = anArtistGateway.insert(new Artist(99l, "shantonu"));
         artist = anArtistGateway.view(id);
         assertEquals(Long.valueOf(1), artist.getID());
 
@@ -59,42 +55,28 @@ public class ArtistGatewayTest extends TestBase {
 
         Long testId = 1l;
         String name = "sha";
-        try {
-            anArtistGateway.insert(new Artist(testId,name));
-            anArtistGateway.remove(1l);
-            assertNull(anArtistGateway.view(1l));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        anArtistGateway.insert(new Artist(testId,name));
+        anArtistGateway.remove(1l);
+        assertNull(anArtistGateway.view(1l));
 
     }
     @Test
     public void testUpdateAnArtistFromDB(){
         Artist anArtist = new Artist(1l,"sha");
-        try {
-            anArtistGateway.insert(anArtist);
-            anArtist = new Artist(1l,"sarker");
-            assertEquals(new Long(1l),anArtistGateway.update(anArtist));
-            assertEquals(anArtist,anArtistGateway.view(1l));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        anArtistGateway.insert(anArtist);
+        anArtist = new Artist(1l,"sarker");
+        assertEquals(new Long(1l),anArtistGateway.update(anArtist));
+        assertEquals(anArtist,anArtistGateway.view(1l));
 
     }
     @Test
     public void testInsertAnArtistFromDB(){
 
         Artist anArtist = new Artist(1l,"sha");
-        try {
 
-            assertEquals(new Long(1), anArtistGateway.insert(anArtist));
-            assertEquals(anArtist, anArtistGateway.view(1l));
-            anArtistGateway.remove(1l);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        assertEquals(new Long(1), anArtistGateway.insert(anArtist));
+        assertEquals(anArtist, anArtistGateway.view(1l));
+        anArtistGateway.remove(1l);
 
     }
 }
