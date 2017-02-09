@@ -21,8 +21,7 @@ public class ArtistGatewayTest extends TestBase {
     private ArtistGateway anArtistGateway;
 
     @Before
-    public void inittest(){
-
+    public void init(){
         anArtistGateway = new ArtistGateway(aConnection);
     }
 

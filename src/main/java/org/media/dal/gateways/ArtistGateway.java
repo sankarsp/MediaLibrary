@@ -64,8 +64,16 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
 
     @Override
-    public Long Insert(Artist artist) {
-        return null;
+    public Long insert(Artist anArtist) {
+        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
+
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return anArtist.getID();
     }
 
     @Override
@@ -78,13 +86,6 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     }
 
-    public Long insert(Artist anArtist) throws SQLException {
-        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
-
-        runQuerry(q);
-
-        return anArtist.getID();
-    }
 
     public void remove(long l) {
 
