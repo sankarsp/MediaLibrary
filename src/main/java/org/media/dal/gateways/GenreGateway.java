@@ -14,7 +14,7 @@ import static org.media.utils.ResultSetHelper.runQuerry;
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class GenreGateway implements Gateway<Genre> {
+public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
     private static final String table="t_Genre";
 
     @Override
