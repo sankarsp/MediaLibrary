@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by shantonu on 2/7/17.
  */
-public interface Gatewayable<T> {
+public interface Gateway<T> {
     List<T> viewAll() throws SQLException, InvocationTargetException, IntrospectionException, InstantiationException, IllegalAccessException;
 
     T view(Long id) throws SQLException;

@@ -1,6 +1,6 @@
 package org.media.dal.gateways;
 
-import org.media.core.Gatewayable;
+import org.media.core.Gateway;
 import org.media.model.Label;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class LabelGateway implements Gatewayable<Label>{
+public class LabelGateway implements Gateway<Label> {
     @Override
     public List<Label> viewAll() {
         return null;

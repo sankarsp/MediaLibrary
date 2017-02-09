@@ -2,7 +2,7 @@ package org.media.dal.gateways;
 
 import static org.media.utils.ResultSetHelper.*;
 
-import org.media.core.Gatewayable;
+import org.media.core.Gateway;
 import org.media.model.Artist;
 
 import java.beans.IntrospectionException;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by shantonu on 1/31/17.
  */
-public class ArtistGateway implements Gatewayable<Artist> {
+public class ArtistGateway implements Gateway<Artist> {
     private Connection aConnection;
     public ArtistGateway(Connection conneciton) {
         super();

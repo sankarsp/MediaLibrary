@@ -1,6 +1,6 @@
 package org.media.dal.gateways;
 
-import org.media.core.Gatewayable;
+import org.media.core.Gateway;
 import org.media.model.Reviewer;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class ReviewerGateway implements Gatewayable<Reviewer>{
+public class ReviewerGateway implements Gateway<Reviewer> {
     @Override
     public List<Reviewer> viewAll() {
         return null;
