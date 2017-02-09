@@ -40,9 +40,26 @@ public class GenreGateway implements Gateway<Genre> {
 
     @Override
     public Genre view(Long id) {
-        return null;
-    }
+        String q = "SELECT * from t_Genre where ID="+id.toString();
 
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new Genre();
+    }
+    public Genre view(String name) {
+        String q = "SELECT * from t_Genre where NAME='"+name+"'";
+
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new Genre();
+    }
     @Override
     public Long Insert(Genre genre) {
         return null;
