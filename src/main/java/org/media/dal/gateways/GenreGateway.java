@@ -1,7 +1,6 @@
 package org.media.dal.gateways;
 
 import org.media.core.Gateway;
-import org.media.model.Artist;
 import org.media.model.Genre;
 
 import java.beans.IntrospectionException;
@@ -62,7 +61,7 @@ public class GenreGateway implements Gateway<Genre> {
     }
     @Override
     public Long insert(Genre genre) {
-        String q = "INSERT INTO "+table+" VALUES ("+genre.getId()+", \""+genre.getName()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("+genre.getID()+", \""+genre.getNAME()+"\");";
 
         try {
             runQuerry(q);
@@ -70,7 +69,7 @@ public class GenreGateway implements Gateway<Genre> {
             e.printStackTrace();
         }
 
-        return genre.getId();
+        return genre.getID();
     }
 
     @Override
