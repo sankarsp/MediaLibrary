@@ -14,8 +14,8 @@ import java.util.List;
 /**
  * Created by shantonu on 1/31/17.
  */
-public class ArtistGateway implements Gateway<Artist> {
-    private Connection aConnection;
+public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
+
     private static final String table="t_Artist";
     public ArtistGateway(Connection conneciton) {
         super();
