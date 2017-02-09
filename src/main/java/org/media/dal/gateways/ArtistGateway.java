@@ -21,22 +21,44 @@ public class ArtistGateway implements Gateway<Artist> {
         this.aConnection = conneciton;
     }
 
-    public List<Artist> viewAll() throws SQLException, InvocationTargetException, IntrospectionException, InstantiationException, IllegalAccessException {
-        String query = "select 8 from t_Artist";
-        return createObjects(runQuerry(query),Artist.class);
+    public List<Artist> viewAll(){
+        String query = "select* from t_Artist";
+        List<Artist> all = null;
+        try {
+            all= createObjects(runQuerry(query),Artist.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return all;
     }
 
-    public Artist view(String name) throws SQLException {
+    public Artist view(String name) {
         String q = "SELECT * from t_Artist where NAME='"+name+"'";
 
-        runQuerry(q);
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return new Artist();
     }
-    public Artist view(Long id) throws SQLException {
+    public Artist view(Long id)  {
         String q = "SELECT * from t_Artist where ID="+id.toString();
 
-        runQuerry(q);
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return new Artist();
     }
 

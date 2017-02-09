@@ -11,7 +11,7 @@ import java.util.List;
 public interface Gateway<T> {
     List<T> viewAll();
 
-    T view(Long id) throws SQLException;
+    T view(Long id);
 
     Long Insert(T t);
 
