@@ -62,7 +62,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public Long insert(Artist anArtist) {
-        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
 
         try {
             runQuerry(q);

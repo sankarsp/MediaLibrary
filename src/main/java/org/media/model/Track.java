@@ -6,67 +6,67 @@ package org.media.model;
  * Created by shantonu on 2/4/17.
  */
 public class Track {
-    private Long id;
-    private String title;
-    private String duration;
-    private Long genreId;
-    private Long artistId;
-    private Long recordingId;
+    private Long ID;
+    private String TITLE;
+    private String DURATION;
+    private Long GENRE_ID;
+    private Long ARTIST_ID;
+    private Long RECORDING_ID;
     public Track(){}
-    public Track(Long id, String title, String duration, Long genreId, Long artistId, Long recordingId) {
-        this.id = id;
-        this.title = title;
-        this.duration = duration;
-        this.genreId = genreId;
-        this.artistId = artistId;
-        this.recordingId = recordingId;
+    public Track(Long ID, String TITLE, String DURATION, Long GENRE_ID, Long ARTIST_ID, Long RECORDING_ID) {
+        this.ID = ID;
+        this.TITLE = TITLE;
+        this.DURATION = DURATION;
+        this.GENRE_ID = GENRE_ID;
+        this.ARTIST_ID = ARTIST_ID;
+        this.RECORDING_ID = RECORDING_ID;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTITLE() {
+        return TITLE;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTITLE(String TITLE) {
+        this.TITLE = TITLE;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getDURATION() {
+        return DURATION;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setDURATION(String DURATION) {
+        this.DURATION = DURATION;
     }
 
-    public Long getGenreId() {
-        return genreId;
+    public Long getGENRE_ID() {
+        return GENRE_ID;
     }
 
-    public void setGenreId(Long genreId) {
-        this.genreId = genreId;
+    public void setGENRE_ID(Long GENRE_ID) {
+        this.GENRE_ID = GENRE_ID;
     }
 
-    public Long getArtistId() {
-        return artistId;
+    public Long getARTIST_ID() {
+        return ARTIST_ID;
     }
 
-    public void setArtistId(Long artistId) {
-        this.artistId = artistId;
+    public void setARTIST_ID(Long ARTIST_ID) {
+        this.ARTIST_ID = ARTIST_ID;
     }
 
-    public Long getRecordingId() {
-        return recordingId;
+    public Long getRECORDING_ID() {
+        return RECORDING_ID;
     }
 
-    public void setRecordingId(Long recordingId) {
-        this.recordingId = recordingId;
+    public void setRECORDING_ID(Long RECORDING_ID) {
+        this.RECORDING_ID = RECORDING_ID;
     }
 }
