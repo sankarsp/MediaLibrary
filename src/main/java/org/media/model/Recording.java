@@ -6,59 +6,59 @@ import java.util.Date;
  * Created by shantonu on 2/4/17.
  */
 public class Recording {
-    private Long id;
-    private String title;
-    private Date releaseDate;
-    private Long artistId;
-    private Long labelId;
+    private Long ID;
+    private String TITLE;
+    private Date RELEASE;
+    private Long ART_ID;
+    private Long LABEL_ID;
 
 
     public Recording(){}
-    public Recording(Long id, String title, Date releaseDate, Long artistId, Long labelId) {
-        this.id = id;
-        this.title = title;
-        this.releaseDate = releaseDate;
-        this.artistId = artistId;
-        this.labelId = labelId;
+    public Recording(Long ID, String title, Date RELEASE, Long ART_ID, Long LABEL_ID) {
+        this.ID = ID;
+        this.TITLE = title;
+        this.RELEASE = RELEASE;
+        this.ART_ID = ART_ID;
+        this.LABEL_ID = LABEL_ID;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTITLE() {
+        return TITLE;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTITLE(String title) {
+        this.TITLE = title;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
+    public Date getRELEASE() {
+        return RELEASE;
     }
 
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setRELEASE(Date RELEASE) {
+        this.RELEASE = RELEASE;
     }
 
-    public Long getArtistId() {
-        return artistId;
+    public Long getART_ID() {
+        return ART_ID;
     }
 
-    public void setArtistId(Long artistId) {
-        this.artistId = artistId;
+    public void setART_ID(Long ART_ID) {
+        this.ART_ID = ART_ID;
     }
 
-    public Long getLabelId() {
-        return labelId;
+    public Long getLABEL_ID() {
+        return LABEL_ID;
     }
 
-    public void setLabelId(Long labelId) {
-        this.labelId = labelId;
+    public void setLABEL_ID(Long LABEL_ID) {
+        this.LABEL_ID = LABEL_ID;
     }
 }
