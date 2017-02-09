@@ -20,7 +20,7 @@ public class RecordingGateway implements Gateway<Recording> {
     }
 
     @Override
-    public Long Insert(Recording recording) {
+    public Long insert(Recording recording) {
         return null;
     }
 

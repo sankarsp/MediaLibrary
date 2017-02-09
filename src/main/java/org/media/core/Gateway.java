@@ -13,7 +13,7 @@ public interface Gateway<T> {
 
     T view(Long id);
 
-    Long Insert(T t);
+    Long insert(T t);
 
     void remove(Long id);
 

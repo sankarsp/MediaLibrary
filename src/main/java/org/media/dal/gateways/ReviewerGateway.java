@@ -20,7 +20,7 @@ public class ReviewerGateway implements Gateway<Reviewer> {
     }
 
     @Override
-    public Long Insert(Reviewer reviewer) {
+    public Long insert(Reviewer reviewer) {
         return null;
     }
 

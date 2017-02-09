@@ -20,7 +20,7 @@ public class TrackGateway implements Gateway<Track> {
     }
 
     @Override
-    public Long Insert(Track track) {
+    public Long insert(Track track) {
         return null;
     }
 

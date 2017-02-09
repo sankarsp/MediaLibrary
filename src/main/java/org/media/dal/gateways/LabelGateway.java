@@ -20,7 +20,7 @@ public class LabelGateway implements Gateway<Label> {
     }
 
     @Override
-    public Long Insert(Label label) {
+    public Long insert(Label label) {
         return null;
     }
 

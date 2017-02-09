@@ -16,11 +16,11 @@ import static org.media.utils.ResultSetHelper.runQuerry;
  * Created by ssarker on 2/5/2017.
  */
 public class GenreGateway implements Gateway<Genre> {
-    private static final String table="t_Artist";
+    private static final String table="t_Genre";
 
     @Override
     public List<Genre> viewAll() {
-        String query = "select* from t_Genre";
+        String query = "select* from "+table;
         List<Genre> all = null;
         try {
             all= getAsList(runQuerry(query),Genre.class);
@@ -40,7 +40,7 @@ public class GenreGateway implements Gateway<Genre> {
 
     @Override
     public Genre view(Long id) {
-        String q = "SELECT * from t_Genre where ID="+id.toString();
+        String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
             runQuerry(q);
@@ -50,7 +50,7 @@ public class GenreGateway implements Gateway<Genre> {
         return new Genre();
     }
     public Genre view(String name) {
-        String q = "SELECT * from t_Genre where NAME='"+name+"'";
+        String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
         try {
             runQuerry(q);
@@ -61,8 +61,16 @@ public class GenreGateway implements Gateway<Genre> {
         return new Genre();
     }
     @Override
-    public Long Insert(Genre genre) {
-        return null;
+    public Long insert(Genre genre) {
+        String q = "INSERT INTO "+table+" VALUES ("+genre.getId()+", \""+genre.getName()+"\");";
+
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return genre.getId();
     }
 
     @Override
