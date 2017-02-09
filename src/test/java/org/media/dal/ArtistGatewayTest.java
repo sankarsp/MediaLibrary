@@ -29,17 +29,9 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testGetAnArtistFromDB(){
         Artist artist = null;
-        try {
-            artist = anArtistGateway.view("Name");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        artist = anArtistGateway.view("Name");
         assertEquals("Name", artist.getNAME());
-        try {
-            artist = anArtistGateway.view(1l);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        artist = anArtistGateway.view(1l);
         assertEquals(Long.valueOf(1), artist.getID());
 
         Long id = null;
@@ -48,34 +40,17 @@ public class ArtistGatewayTest extends TestBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try {
-            artist = anArtistGateway.view(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        artist = anArtistGateway.view(id);
         assertEquals(Long.valueOf(1), artist.getID());
 
     }
 
     @Test
     public void testGetAllArtistFromDB(){
-        try {
-            List<Artist> allArtist = anArtistGateway.viewAll();
-            assertTrue(allArtist.size()>0);
-            for(Artist artist : allArtist){
-                assertEquals(anArtistGateway.view(artist.getID()), artist);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IntrospectionException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        List<Artist> allArtist = anArtistGateway.viewAll();
+        assertTrue(allArtist.size()>0);
+        for(Artist artist : allArtist){
+            assertEquals(anArtistGateway.view(artist.getID()), artist);
         }
 
     }
@@ -101,7 +76,7 @@ public class ArtistGatewayTest extends TestBase {
         try {
             anArtistGateway.insert(anArtist);
             anArtist = new Artist(1l,"sarker");
-            assertEquals(1l,anArtistGateway.update(anArtist));
+            assertEquals(new Long(1l),anArtistGateway.update(anArtist));
             assertEquals(anArtist,anArtistGateway.view(1l));
 
         } catch (SQLException e) {
