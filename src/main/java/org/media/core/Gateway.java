@@ -9,7 +9,7 @@ import java.util.List;
  * Created by shantonu on 2/7/17.
  */
 public interface Gateway<T> {
-    List<T> viewAll() throws SQLException, InvocationTargetException, IntrospectionException, InstantiationException, IllegalAccessException;
+    List<T> viewAll();
 
     T view(Long id) throws SQLException;
 
