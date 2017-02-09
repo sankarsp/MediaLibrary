@@ -16,13 +16,14 @@ import java.util.List;
  */
 public class ArtistGateway implements Gateway<Artist> {
     private Connection aConnection;
+    private static final String table="t_Artist";
     public ArtistGateway(Connection conneciton) {
         super();
         this.aConnection = conneciton;
     }
 
     public List<Artist> viewAll(){
-        String query = "select* from t_Artist";
+        String query = "select* from "+table;
         List<Artist> all = null;
         try {
             all= getAsList(runQuerry(query),Artist.class);
@@ -41,7 +42,7 @@ public class ArtistGateway implements Gateway<Artist> {
     }
 
     public Artist view(String name) {
-        String q = "SELECT * from t_Artist where NAME='"+name+"'";
+        String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
         try {
             runQuerry(q);
@@ -52,7 +53,7 @@ public class ArtistGateway implements Gateway<Artist> {
         return new Artist();
     }
     public Artist view(Long id)  {
-        String q = "SELECT * from t_Artist where ID="+id.toString();
+        String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
             runQuerry(q);
@@ -78,7 +79,7 @@ public class ArtistGateway implements Gateway<Artist> {
     }
 
     public Long insert(Artist anArtist) throws SQLException {
-        String q = "INSERT INTO t_Artist VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
 
         runQuerry(q);
 
