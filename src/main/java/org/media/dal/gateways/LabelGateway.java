@@ -61,7 +61,8 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
 
     @Override
     public Long insert(Label label) {
-        String q = "INSERT INTO "+table+" VALUES ("+label.getID()+", \""+label.getNAME()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("
+                +label.getID()+", \""+label.getNAME()+"\")";
 
         try {
             runQuerry(q);

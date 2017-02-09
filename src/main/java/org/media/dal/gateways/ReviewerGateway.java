@@ -60,7 +60,9 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
 
     @Override
     public Long insert(Reviewer reviewer) {
-        String q = "INSERT INTO "+table+" VALUES ("+reviewer.getID()+", \""+reviewer.getNAME()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("
+                +reviewer.getID()+", \""
+                +reviewer.getNAME()+"\")";
 
         try {
             runQuerry(q);

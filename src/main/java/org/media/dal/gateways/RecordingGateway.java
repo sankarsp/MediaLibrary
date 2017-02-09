@@ -55,7 +55,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
                 +recording.getTITLE()+"\",\""
                 +new SimpleDateFormat("dd/MM/yyyy").format(recording.getRELEASE())+"\", "
                 +recording.getART_ID()+","+
-                recording.getLABEL_ID()+");";
+                recording.getLABEL_ID()+")";
 
         try {
             runQuerry(q);

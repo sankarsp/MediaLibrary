@@ -55,7 +55,7 @@ public class ReviewGateway extends GatewayBase implements Gateway<Review> {
                 +review.getREVIEWER_ID()+","
                 +review.getRECORDING_ID()+","
                 +review.getRATING()+", \""
-                +review.getREVIEW()+"\");";
+                +review.getREVIEW()+"\")";
 
         try {
             runQuerry(q);

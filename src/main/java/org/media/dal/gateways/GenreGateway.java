@@ -61,7 +61,8 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
     }
     @Override
     public Long insert(Genre genre) {
-        String q = "INSERT INTO "+table+" VALUES ("+genre.getID()+", \""+genre.getNAME()+"\");";
+        String q = "INSERT INTO "+table+" VALUES ("
+                +genre.getID()+", \""+genre.getNAME()+"\")";
 
         try {
             runQuerry(q);
