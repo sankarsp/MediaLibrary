@@ -25,7 +25,7 @@ public class ArtistGateway implements Gateway<Artist> {
         String query = "select* from t_Artist";
         List<Artist> all = null;
         try {
-            all= createObjects(runQuerry(query),Artist.class);
+            all= getAsList(runQuerry(query),Artist.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

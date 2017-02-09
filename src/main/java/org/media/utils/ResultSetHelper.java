@@ -18,7 +18,7 @@ public class ResultSetHelper {
     public ResultSetHelper() {
     }
 
-    public static <T> List<T> createObjects(ResultSet resultSet, Class<T> tClass) throws
+    public static <T> List<T> getAsList(ResultSet resultSet, Class<T> tClass) throws
             SQLException, IllegalAccessException, InstantiationException, IntrospectionException, InvocationTargetException {
         List<T> listImtes = new ArrayList<T>();
         while (resultSet.next()) {
