@@ -17,10 +17,7 @@ import java.util.List;
 public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     private static final String table="t_Artist";
-    public ArtistGateway(Connection conneciton) {
-        super();
-        this.aConnection = conneciton;
-    }
+
 
     public List<Artist> viewAll(){
         String query = "select* from "+table;
