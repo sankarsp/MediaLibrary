@@ -1,5 +1,6 @@
 package org.media;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.media.dal.ConnectionManager;
 
@@ -12,7 +13,11 @@ public abstract class TestBase {
     public static Connection aConnection;
 
     @BeforeClass
-    public static void initTestClass(){
+    public static void initClass(){
+        aConnection = ConnectionManager.getConn();
+    }
+    @AfterClass
+    public static void tearDownClass(){
         aConnection = ConnectionManager.getConn();
     }
 }
