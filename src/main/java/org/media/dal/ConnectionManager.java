@@ -9,6 +9,7 @@ import java.sql.SQLException;
  */
 public class ConnectionManager {
 
+    private ConnectionManager(){}
     private static Connection aConnection = null;
     public static String url = "jdbc:mysql://" +
             System.getProperty("mysql.host") + ":" +
