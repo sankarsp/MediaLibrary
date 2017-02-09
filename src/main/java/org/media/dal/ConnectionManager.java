@@ -38,4 +38,9 @@ public class ConnectionManager {
         }
         return aConnection;
     }
+
+    public static void close() throws SQLException {
+        aConnection.close();
+        aConnection=null;
+    }
 }
