@@ -85,12 +85,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public void remove(Artist artist) {
 
     }
-
-
-    public void remove(long l) {
-
-    }
-
+    @Override
     public Long update(Artist anArtist) {
         return anArtist.getID();
     }
