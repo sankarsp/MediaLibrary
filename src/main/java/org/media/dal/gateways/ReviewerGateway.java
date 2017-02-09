@@ -3,25 +3,72 @@ package org.media.dal.gateways;
 import org.media.core.Gateway;
 import org.media.model.Reviewer;
 
+import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 import java.util.List;
+
+import static org.media.utils.ResultSetHelper.getAsList;
+import static org.media.utils.ResultSetHelper.runQuerry;
 
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class ReviewerGateway implements Gateway<Reviewer> {
+public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
+    private static final String table="t_Artist";
     @Override
     public List<Reviewer> viewAll() {
-        return null;
+        String query = "select* from "+table;
+        List<Reviewer> all = null;
+        try {
+            all= getAsList(runQuerry(query),Reviewer.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return all;
     }
+    public Reviewer view(String name) {
+        String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new Reviewer();
+    }
     @Override
     public Reviewer view(Long id) {
-        return null;
+        String q = "SELECT * from "+table+" where ID="+id.toString();
+
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new Reviewer();
     }
 
     @Override
     public Long insert(Reviewer reviewer) {
-        return null;
+        String q = "INSERT INTO "+table+" VALUES ("+reviewer.getID()+", \""+reviewer.getNAME()+"\");";
+
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return reviewer.getID();
     }
 
     @Override
