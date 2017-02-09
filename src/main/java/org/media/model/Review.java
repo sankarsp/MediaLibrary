@@ -1,62 +1,60 @@
 package org.media.model;
 
-import java.util.Date;
-
 /**
  * Created by shantonu on 2/4/17.
  */
 public class Review {
-    private Long id;
-    private Long reviewerId;
-    private Long recordingId;
-    private Long rating;
-    private String review;
+    private Long ID;
+    private Long REVIEWER_ID;
+    private Long RECORDING_ID;
+    private Long RATING;
+    private String REVIEW;
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
-    public Long getReviewerId() {
-        return reviewerId;
+    public Long getREVIEWER_ID() {
+        return REVIEWER_ID;
     }
 
-    public void setReviewerId(Long reviewerId) {
-        this.reviewerId = reviewerId;
+    public void setREVIEWER_ID(Long REVIEWER_ID) {
+        this.REVIEWER_ID = REVIEWER_ID;
     }
 
-    public Long getRecordingId() {
-        return recordingId;
+    public Long getRECORDING_ID() {
+        return RECORDING_ID;
     }
 
-    public void setRecordingId(Long recordingId) {
-        this.recordingId = recordingId;
+    public void setRECORDING_ID(Long RECORDING_ID) {
+        this.RECORDING_ID = RECORDING_ID;
     }
 
-    public Long getRating() {
-        return rating;
+    public Long getRATING() {
+        return RATING;
     }
 
-    public void setRating(Long rating) {
-        this.rating = rating;
+    public void setRATING(Long RATING) {
+        this.RATING = RATING;
     }
 
-    public String getReview() {
-        return review;
+    public String getREVIEW() {
+        return REVIEW;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+    public void setREVIEW(String REVIEW) {
+        this.REVIEW = REVIEW;
     }
     public Review(){}
-    public Review(Long id, Long reviewerId, Long recordingId, Long rating, String review) {
-        this.id = id;
-        this.reviewerId = reviewerId;
-        this.recordingId = recordingId;
-        this.rating = rating;
-        this.review = review;
+    public Review(Long ID, Long REVIEWER_ID, Long RECORDING_ID, Long RATING, String REVIEW) {
+        this.ID = ID;
+        this.REVIEWER_ID = REVIEWER_ID;
+        this.RECORDING_ID = RECORDING_ID;
+        this.RATING = RATING;
+        this.REVIEW = REVIEW;
     }
 }
