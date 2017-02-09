@@ -14,7 +14,7 @@ import static org.media.utils.ResultSetHelper.runQuerry;
 /**
  * Created by ssarker on 2/5/2017.
  */
-public class LabelGateway implements Gateway<Label> {
+public class LabelGateway  extends GatewayBase implements Gateway<Label> {
     private static final String table="t_Label";
     @Override
     public List<Label> viewAll() {
