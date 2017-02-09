@@ -34,13 +34,13 @@ public class ArtistGatewayTest extends TestBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        assertEquals("Name", artist.getName());
+        assertEquals("Name", artist.getNAME());
         try {
             artist = anArtistGateway.view(1l);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        assertEquals(Long.valueOf(1), artist.getId());
+        assertEquals(Long.valueOf(1), artist.getID());
 
         Long id = null;
         try {
@@ -53,7 +53,7 @@ public class ArtistGatewayTest extends TestBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        assertEquals(Long.valueOf(1), artist.getId());
+        assertEquals(Long.valueOf(1), artist.getID());
 
     }
 
@@ -63,7 +63,7 @@ public class ArtistGatewayTest extends TestBase {
             List<Artist> allArtist = anArtistGateway.viewAll();
             assertTrue(allArtist.size()>0);
             for(Artist artist : allArtist){
-                assertEquals(anArtistGateway.view(artist.getId()), artist);
+                assertEquals(anArtistGateway.view(artist.getID()), artist);
             }
 
         } catch (SQLException e) {

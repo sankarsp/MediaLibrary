@@ -78,11 +78,11 @@ public class ArtistGateway implements Gateway<Artist> {
     }
 
     public Long insert(Artist anArtist) throws SQLException {
-        String q = "INSERT INTO t_Artist VALUES ("+anArtist.getId()+", \""+anArtist.getName()+"\");";
+        String q = "INSERT INTO t_Artist VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\");";
 
         runQuerry(q);
 
-        return anArtist.getId();
+        return anArtist.getID();
     }
 
     public void remove(long l) {
@@ -90,6 +90,6 @@ public class ArtistGateway implements Gateway<Artist> {
     }
 
     public Long update(Artist anArtist) {
-        return anArtist.getId();
+        return anArtist.getID();
     }
 }

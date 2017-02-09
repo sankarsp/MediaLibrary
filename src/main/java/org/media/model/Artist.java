@@ -4,28 +4,28 @@ package org.media.model;
  * Created by shantonu on 1/31/17.
  */
 public class Artist {
-    private Long id;
-    private String name;
+    private Long ID;
+    private String NAME;
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
     }
 
     public Artist(){}
-    public Artist(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Artist(Long ID, String NAME) {
+        this.ID = ID;
+        this.NAME = NAME;
     }
 }
