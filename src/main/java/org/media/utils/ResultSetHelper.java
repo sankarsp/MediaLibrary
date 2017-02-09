@@ -39,10 +39,6 @@ public class ResultSetHelper {
         return listImtes;
     }
 
-    public static ResultSet runQuerry(String query) throws SQLException {
-        Statement pt = ConnectionManager.getConn().createStatement();
-        return pt.executeQuery(query);
-    }
 
     protected static Long getNextId(String tableName) {
         return 0l;
