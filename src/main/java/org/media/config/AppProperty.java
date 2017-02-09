@@ -13,8 +13,6 @@ public class AppProperty {
         final String propertyFolder="src/main/resources/";
         load("src/main/resources/app.properties");
         load("src/test/resources/test.properties");
-
-
     }
 
     private static void load(String fileName){
