@@ -33,11 +33,13 @@ public class AppProperty {
         Properties p = new Properties();
         try {
             p.load(new FileInputStream(new File(fileName)));
+            for(String k:p.stringPropertyNames()){
+                System.setProperty(k,p.getProperty(k));
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+
+
         }
-        for(String k:p.stringPropertyNames()){
-            System.setProperty(k,p.getProperty(k));
-        }
+
     }
 }
