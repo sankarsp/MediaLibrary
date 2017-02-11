@@ -13,7 +13,11 @@ import java.sql.Statement;
 public abstract class GatewayBase {
     protected Connection aConnection;
     public GatewayBase(){
-        aConnection = ConnectionManager.getConn();
+        try {
+            aConnection = ConnectionManager.getConn();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     protected ResultSet runQuerry(String query) throws SQLException {
         Statement pt = aConnection.createStatement();

@@ -20,6 +20,7 @@ public class ConnectionManager {
     private static final String className = "com.mysql.jdbc.Driver";
 
     private static synchronized Connection getConnection() throws SQLException {
+        System.out.println(url);
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         return DriverManager.getConnection(url, user, pass);
     }
@@ -29,18 +30,14 @@ public class ConnectionManager {
         return DriverManager.getConnection(url, user, pass);
     }
 
-    public static Connection getConn() {
+    public static Connection getConn() throws SQLException {
         if (aConnection == null) {
-            try {
-                aConnection = getConnection();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            aConnection = getConnection();
         }
         return aConnection;
     }
 
-    public static void close() throws SQLException {
+    public static synchronized void close() throws SQLException {
         aConnection.close();
         aConnection=null;
     }
