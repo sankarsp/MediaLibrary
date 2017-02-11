@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Created by shantonu on 1/27/17.
  */
-public class TestGateway extends TestBase{
+public class ConnectionManagerTest extends TestBase{
     @Test
     public void testConnectionOpen() {
         Assert.assertNotNull(aConnection);
