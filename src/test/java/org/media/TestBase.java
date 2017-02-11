@@ -10,7 +10,7 @@ import java.sql.Connection;
  * Created by shantonu on 1/27/17.
  */
 public abstract class TestBase {
-    public static Connection aConnection;
+    protected static Connection aConnection;
 
     @BeforeClass
     public static void initClass(){

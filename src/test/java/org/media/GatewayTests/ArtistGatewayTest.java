@@ -1,4 +1,4 @@
-package org.media.dal;
+package org.media.GatewayTests;
 
 
 import static org.junit.Assert.*;
@@ -22,7 +22,7 @@ public class ArtistGatewayTest extends TestBase {
 
     @Before
     public void init(){
-        anArtistGateway = new ArtistGateway(aConnection);
+        anArtistGateway = new ArtistGateway();
     }
 
     @Test
