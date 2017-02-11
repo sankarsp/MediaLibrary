@@ -47,6 +47,4 @@ public class ConnectionManagerTest {
         ConnectionManager.close();
         Assert.assertTrue(aConnection.isClosed());
     }
-
-
 }
