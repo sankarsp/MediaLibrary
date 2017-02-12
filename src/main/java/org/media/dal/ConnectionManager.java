@@ -17,11 +17,11 @@ public class ConnectionManager {
             System.getProperty("mysql.db");
     private static final String user = System.getProperty("mysql.user.name");
     private static final String pass = System.getProperty("mysql.user.pass");
-    private static final String className = "com.mysql.jdbc.Driver";
+    private static final String className = "com.mysql.cj.jdbc.Driver";//com.mysql.jdbc.Driver
 
     private static synchronized Connection getConnection() throws SQLException {
         System.out.println(url);
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         return DriverManager.getConnection(url, user, pass);
     }
 
