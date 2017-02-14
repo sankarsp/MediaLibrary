@@ -45,7 +45,6 @@ public class ArtistGatewayTest extends TestBase {
         for(Artist artist : allArtist){
             assertEquals(anArtistGateway.view(artist.getID()), artist);
         }
-
     }
 
     @Test
