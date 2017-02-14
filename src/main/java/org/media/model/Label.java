@@ -4,14 +4,14 @@ package org.media.model;
  * Created by shantonu on 2/4/17.
  */
 public class Label {
-    private Long ID;
+    private Integer ID;
     private String NAME;
 
-    public Long getID() {
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
 
@@ -24,7 +24,7 @@ public class Label {
     }
 
     public Label(){}
-    public Label(Long ID, String NAME) {
+    public Label(Integer ID, String NAME) {
         this.ID = ID;
         this.NAME = NAME;
     }

@@ -11,14 +11,14 @@ import java.util.List;
 public interface Gateway<T> {
     List<T> viewAll();
 
-    T view(Long id);
+    T view(Integer id);
 
-    Long insert(T t);
+    Integer insert(T t);
 
-    void remove(Long id);
+    void remove(Integer id);
 
     void remove(T t);
 
-    Long update(T t);
+    Integer update(T t);
 
 }

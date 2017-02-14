@@ -4,14 +4,14 @@ package org.media.model;
  * Created by shantonu on 1/31/17.
  */
 public class Artist {
-    private Long ID;
+    private Integer ID;
     private String NAME;
 
-    public Long getID() {
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
 
@@ -24,7 +24,7 @@ public class Artist {
     }
 
     public Artist(){}
-    public Artist(Long ID, String NAME) {
+    public Artist(Integer ID, String NAME) {
         this.ID = ID;
         this.NAME = NAME;
     }

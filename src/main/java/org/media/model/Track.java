@@ -6,14 +6,14 @@ package org.media.model;
  * Created by shantonu on 2/4/17.
  */
 public class Track {
-    private Long ID;
+    private Integer ID;
     private String TITLE;
     private String DURATION;
-    private Long GENRE_ID;
-    private Long ARTIST_ID;
-    private Long RECORDING_ID;
+    private Integer GENRE_ID;
+    private Integer ARTIST_ID;
+    private Integer RECORDING_ID;
     public Track(){}
-    public Track(Long ID, String TITLE, String DURATION, Long GENRE_ID, Long ARTIST_ID, Long RECORDING_ID) {
+    public Track(Integer ID, String TITLE, String DURATION, Integer GENRE_ID, Integer ARTIST_ID, Integer RECORDING_ID) {
         this.ID = ID;
         this.TITLE = TITLE;
         this.DURATION = DURATION;
@@ -22,11 +22,11 @@ public class Track {
         this.RECORDING_ID = RECORDING_ID;
     }
 
-    public Long getID() {
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
 
@@ -46,27 +46,27 @@ public class Track {
         this.DURATION = DURATION;
     }
 
-    public Long getGENRE_ID() {
+    public Integer getGENRE_ID() {
         return GENRE_ID;
     }
 
-    public void setGENRE_ID(Long GENRE_ID) {
+    public void setGENRE_ID(Integer GENRE_ID) {
         this.GENRE_ID = GENRE_ID;
     }
 
-    public Long getARTIST_ID() {
+    public Integer getARTIST_ID() {
         return ARTIST_ID;
     }
 
-    public void setARTIST_ID(Long ARTIST_ID) {
+    public void setARTIST_ID(Integer ARTIST_ID) {
         this.ARTIST_ID = ARTIST_ID;
     }
 
-    public Long getRECORDING_ID() {
+    public Integer getRECORDING_ID() {
         return RECORDING_ID;
     }
 
-    public void setRECORDING_ID(Long RECORDING_ID) {
+    public void setRECORDING_ID(Integer RECORDING_ID) {
         this.RECORDING_ID = RECORDING_ID;
     }
 }

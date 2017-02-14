@@ -4,41 +4,41 @@ package org.media.model;
  * Created by shantonu on 2/4/17.
  */
 public class Review {
-    private Long ID;
-    private Long REVIEWER_ID;
-    private Long RECORDING_ID;
-    private Long RATING;
+    private Integer ID;
+    private Integer REVIEWER_ID;
+    private Integer RECORDING_ID;
+    private Integer RATING;
     private String REVIEW;
 
-    public Long getID() {
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
 
-    public Long getREVIEWER_ID() {
+    public Integer getREVIEWER_ID() {
         return REVIEWER_ID;
     }
 
-    public void setREVIEWER_ID(Long REVIEWER_ID) {
+    public void setREVIEWER_ID(Integer REVIEWER_ID) {
         this.REVIEWER_ID = REVIEWER_ID;
     }
 
-    public Long getRECORDING_ID() {
+    public Integer getRECORDING_ID() {
         return RECORDING_ID;
     }
 
-    public void setRECORDING_ID(Long RECORDING_ID) {
+    public void setRECORDING_ID(Integer RECORDING_ID) {
         this.RECORDING_ID = RECORDING_ID;
     }
 
-    public Long getRATING() {
+    public Integer getRATING() {
         return RATING;
     }
 
-    public void setRATING(Long RATING) {
+    public void setRATING(Integer RATING) {
         this.RATING = RATING;
     }
 
@@ -50,7 +50,7 @@ public class Review {
         this.REVIEW = REVIEW;
     }
     public Review(){}
-    public Review(Long ID, Long REVIEWER_ID, Long RECORDING_ID, Long RATING, String REVIEW) {
+    public Review(Integer ID, Integer REVIEWER_ID, Integer RECORDING_ID, Integer RATING, String REVIEW) {
         this.ID = ID;
         this.REVIEWER_ID = REVIEWER_ID;
         this.RECORDING_ID = RECORDING_ID;

@@ -6,15 +6,15 @@ import java.util.Date;
  * Created by shantonu on 2/4/17.
  */
 public class Recording {
-    private Long ID;
+    private Integer ID;
     private String TITLE;
     private Date RELEASE;
-    private Long ART_ID;
-    private Long LABEL_ID;
+    private Integer ART_ID;
+    private Integer LABEL_ID;
 
 
     public Recording(){}
-    public Recording(Long ID, String title, Date RELEASE, Long ART_ID, Long LABEL_ID) {
+    public Recording(Integer ID, String title, Date RELEASE, Integer ART_ID, Integer LABEL_ID) {
         this.ID = ID;
         this.TITLE = title;
         this.RELEASE = RELEASE;
@@ -22,11 +22,11 @@ public class Recording {
         this.LABEL_ID = LABEL_ID;
     }
 
-    public Long getID() {
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
 
@@ -46,19 +46,19 @@ public class Recording {
         this.RELEASE = RELEASE;
     }
 
-    public Long getART_ID() {
+    public Integer getART_ID() {
         return ART_ID;
     }
 
-    public void setART_ID(Long ART_ID) {
+    public void setART_ID(Integer ART_ID) {
         this.ART_ID = ART_ID;
     }
 
-    public Long getLABEL_ID() {
+    public Integer getLABEL_ID() {
         return LABEL_ID;
     }
 
-    public void setLABEL_ID(Long LABEL_ID) {
+    public void setLABEL_ID(Integer LABEL_ID) {
         this.LABEL_ID = LABEL_ID;
     }
 }
