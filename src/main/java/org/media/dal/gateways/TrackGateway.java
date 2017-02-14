@@ -36,7 +36,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
     }
 
     @Override
-    public Track view(Long id) {
+    public Track view(Integer id) {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -48,7 +48,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
     }
 
     @Override
-    public Long insert(Track track) {
+    public Integer insert(Track track) {
         String q = "INSERT INTO "+table+" VALUES ("
                 +track.getID()+", \""
                 +track.getTITLE()+"\",\""
@@ -67,7 +67,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
 
     }
 
@@ -77,7 +77,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
     }
 
     @Override
-    public Long update(Track track) {
+    public Integer update(Track track) {
         return null;
     }
 }
