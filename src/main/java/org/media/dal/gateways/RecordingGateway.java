@@ -37,7 +37,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
     }
 
     @Override
-    public Recording view(Long id) {
+    public Recording view(Integer id) {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -49,7 +49,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
     }
 
     @Override
-    public Long insert(Recording recording) {
+    public Integer insert(Recording recording) {
         String q = "INSERT INTO "+table+" VALUES ("
                 +recording.getID()+", \""
                 +recording.getTITLE()+"\",\""
@@ -67,7 +67,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
 
     }
 
@@ -77,7 +77,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
     }
 
     @Override
-    public Long update(Recording recording) {
+    public Integer update(Recording recording) {
         return null;
     }
 }
