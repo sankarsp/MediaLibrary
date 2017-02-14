@@ -47,7 +47,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
         return new Reviewer();
     }
     @Override
-    public Reviewer view(Long id) {
+    public Reviewer view(Integer id) {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -59,7 +59,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
     }
 
     @Override
-    public Long insert(Reviewer reviewer) {
+    public Integer insert(Reviewer reviewer) {
         String q = "INSERT INTO "+table+" VALUES ("
                 +reviewer.getID()+", \""
                 +reviewer.getNAME()+"\")";
@@ -74,7 +74,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
 
     }
 
@@ -84,7 +84,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
     }
 
     @Override
-    public Long update(Reviewer reviewer) {
+    public Integer update(Reviewer reviewer) {
         return null;
     }
 }
