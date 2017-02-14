@@ -22,7 +22,7 @@ public class ResultSetHelper {
             SQLException, IllegalAccessException, InstantiationException, IntrospectionException, InvocationTargetException {
         List<T> listImtes = new ArrayList<T>();
         while (resultSet.next()) {
-            T intance = tClass.newInstance();
+            T instance = tClass.newInstance();
             for (Field field : tClass.getDeclaredFields()) {
                 PropertyDescriptor pd = new PropertyDescriptor(field.getName(), tClass);
                 //System.out.println("PD " + pd.getName());
@@ -32,13 +32,29 @@ public class ResultSetHelper {
                 Class[] types = method.getParameterTypes();
                 //System.out.println("Method : Parameter type "+types[0]);
                 Object value = resultSet.getObject(field.getName());
-                method.invoke(intance, (types[0]).cast(value));
+                method.invoke(instance, (types[0]).cast(value));
             }
-            listImtes.add(intance);
+            listImtes.add(instance);
         }
         return listImtes;
     }
 
+    public static <T> T getItem(ResultSet resultSet, Class<T> aClass) throws IllegalAccessException, InstantiationException, SQLException, IntrospectionException, InvocationTargetException {
+        T instance = aClass.newInstance();
+        resultSet.next();
+        for (Field field : aClass.getDeclaredFields()) {
+            PropertyDescriptor pd = new PropertyDescriptor(field.getName(), aClass);
+            //System.out.println("PD " + pd.getName());
+            Method method = pd.getWriteMethod();
+              /*  System.out.println("Method : " + method.getName());
+                System.out.println("Method : Parameter count " + method.getParameterCount());*/
+            Class[] types = method.getParameterTypes();
+            //System.out.println("Method : Parameter type "+types[0]);
+            Object value = resultSet.getObject(field.getName());
+            method.invoke(instance, (types[0]).cast(value));
+        }
+        return instance;
+    }
 
     protected static Long getNextId(String tableName) {
         return 0l;
