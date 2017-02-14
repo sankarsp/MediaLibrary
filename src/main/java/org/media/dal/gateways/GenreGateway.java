@@ -38,7 +38,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
     }
 
     @Override
-    public Genre view(Long id) {
+    public Genre view(Integer id) {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -60,7 +60,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
         return new Genre();
     }
     @Override
-    public Long insert(Genre genre) {
+    public Integer insert(Genre genre) {
         String q = "INSERT INTO "+table+" VALUES ("
                 +genre.getID()+", \""+genre.getNAME()+"\")";
 
@@ -74,7 +74,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
 
     }
 
@@ -84,7 +84,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
     }
 
     @Override
-    public Long update(Genre genre) {
+    public Integer update(Genre genre) {
         return null;
     }
 }
