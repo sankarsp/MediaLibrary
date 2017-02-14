@@ -37,7 +37,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
     }
 
     @Override
-    public Label view(Long id) {
+    public Label view(Integer id) {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -60,7 +60,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
     }
 
     @Override
-    public Long insert(Label label) {
+    public Integer insert(Label label) {
         String q = "INSERT INTO "+table+" VALUES ("
                 +label.getID()+", \""+label.getNAME()+"\")";
 
@@ -74,7 +74,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
 
     }
 
@@ -84,7 +84,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
     }
 
     @Override
-    public Long update(Label label) {
+    public Integer update(Label label) {
         return null;
     }
 }
