@@ -46,7 +46,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
         return new Artist();
     }
-    public Artist view(Long id)  {
+    public Artist view(Integer id)  {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
@@ -58,7 +58,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
 
     @Override
-    public Long insert(Artist anArtist) {
+    public Integer insert(Artist anArtist) {
         String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
         try {
             runQuerry(q);
@@ -69,14 +69,14 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
     }
 
     @Override
     public void remove(Artist artist) {
     }
     @Override
-    public Long update(Artist anArtist) {
+    public Integer update(Artist anArtist) {
         return anArtist.getID();
     }
 }
