@@ -15,10 +15,7 @@ import java.util.List;
  * Created by shantonu on 1/31/17.
  */
 public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
-
     private static final String table="t_Artist";
-
-
     public List<Artist> viewAll(){
         String query = "select* from "+table;
         List<Artist> all = null;
@@ -63,24 +60,20 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     @Override
     public Long insert(Artist anArtist) {
         String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
-
         try {
             runQuerry(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return anArtist.getID();
     }
 
     @Override
     public void remove(Long id) {
-
     }
 
     @Override
     public void remove(Artist artist) {
-
     }
     @Override
     public Long update(Artist anArtist) {

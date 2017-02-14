@@ -32,12 +32,10 @@ public class ArtistGatewayTest extends TestBase {
         assertEquals("Name", artist.getNAME());
         artist = anArtistGateway.view(1l);
         assertEquals(Long.valueOf(1), artist.getID());
-
         Long id = null;
         id = anArtistGateway.insert(new Artist(99l, "shantonu"));
         artist = anArtistGateway.view(id);
         assertEquals(Long.valueOf(1), artist.getID());
-
     }
 
     @Test
