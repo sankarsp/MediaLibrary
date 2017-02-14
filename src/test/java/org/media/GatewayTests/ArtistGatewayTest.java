@@ -30,12 +30,11 @@ public class ArtistGatewayTest extends TestBase {
         Artist artist = null;
         artist = anArtistGateway.view("Name");
         assertEquals("Name", artist.getNAME());
-        artist = anArtistGateway.view(1l);
-        assertEquals(Long.valueOf(1), artist.getID());
-        Long id = null;
-        id = anArtistGateway.insert(new Artist(99l, "shantonu"));
+        artist = anArtistGateway.view(1);
+        assertEquals(Integer.valueOf(1), artist.getID());
+        Integer id = anArtistGateway.insert(new Artist(99, "shantonu"));
         artist = anArtistGateway.view(id);
-        assertEquals(Long.valueOf(1), artist.getID());
+        assertEquals(Integer.valueOf(1), artist.getID());
     }
 
     @Test
@@ -50,30 +49,30 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testDeleteAnArtistFromDB(){
 
-        Long testId = 1l;
+        Integer testId = 1;
         String name = "sha";
         anArtistGateway.insert(new Artist(testId,name));
-        anArtistGateway.remove(1l);
-        assertNull(anArtistGateway.view(1l));
+        anArtistGateway.remove(1);
+        assertNull(anArtistGateway.view(1));
 
     }
     @Test
     public void testUpdateAnArtistFromDB(){
-        Artist anArtist = new Artist(1l,"sha");
+        Artist anArtist = new Artist(1,"sha");
         anArtistGateway.insert(anArtist);
-        anArtist = new Artist(1l,"sarker");
-        assertEquals(new Long(1l),anArtistGateway.update(anArtist));
-        assertEquals(anArtist,anArtistGateway.view(1l));
+        anArtist = new Artist(1,"sarker");
+        assertEquals(new Integer(1),anArtistGateway.update(anArtist));
+        assertEquals(anArtist,anArtistGateway.view(1));
 
     }
     @Test
     public void testInsertAnArtistFromDB(){
 
-        Artist anArtist = new Artist(1l,"sha");
+        Artist anArtist = new Artist(1,"sha");
 
-        assertEquals(new Long(1), anArtistGateway.insert(anArtist));
-        assertEquals(anArtist, anArtistGateway.view(1l));
-        anArtistGateway.remove(1l);
+        assertEquals(new Integer(1), anArtistGateway.insert(anArtist));
+        assertEquals(anArtist, anArtistGateway.view(1));
+        anArtistGateway.remove(1);
 
     }
 }
