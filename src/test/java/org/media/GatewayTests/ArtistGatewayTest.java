@@ -42,8 +42,9 @@ public class ArtistGatewayTest extends TestBase {
         List<Artist> allArtist = anArtistGateway.viewAll();
         assertTrue(allArtist.size()>0);
         for(Artist artist : allArtist){
-            assertEquals(anArtistGateway.view(artist.getID()).getID(), artist.getID());
-            assertEquals(anArtistGateway.view(artist.getID()).getNAME(), artist.getNAME());
+            Artist found = anArtistGateway.view(artist.getID());
+            assertEquals(found.getID(), artist.getID());
+            assertEquals(found.getNAME(), artist.getNAME());
         }
     }
 

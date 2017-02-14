@@ -4,10 +4,12 @@ import static org.media.utils.ResultSetHelper.*;
 
 import org.media.core.Gateway;
 import org.media.model.Artist;
+import org.media.utils.ResultSetHelper;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -48,13 +50,24 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
     public Artist view(Integer id)  {
         String q = "SELECT * from "+table+" where ID="+id.toString();
-
+        ResultSet resultSet = null;
+        Artist result = null;
         try {
-            runQuerry(q);
+           resultSet =  runQuerry(q);
+            result = ResultSetHelper.getItem(resultSet,Artist.class);
+
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
         }
-        return new Artist();
+        return result;
     }
 
     @Override
