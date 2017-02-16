@@ -53,7 +53,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
         String q = "INSERT INTO "+table+" VALUES ("
                 +recording.getID()+", \""
                 +recording.getTITLE()+"\",\""
-                +new SimpleDateFormat("dd/MM/yyyy").format(recording.getRELEASE())+"\", "
+                +new SimpleDateFormat("dd/MM/yyyy").format(recording.getRELEASE_DATE())+"\", "
                 +recording.getART_ID()+","+
                 recording.getLABEL_ID()+")";
 

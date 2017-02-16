@@ -8,16 +8,16 @@ import java.util.Date;
 public class Recording {
     private Integer ID;
     private String TITLE;
-    private Date RELEASE;
+    private Date RELEASE_DATE;
     private Integer ART_ID;
     private Integer LABEL_ID;
 
 
     public Recording(){}
-    public Recording(Integer ID, String title, Date RELEASE, Integer ART_ID, Integer LABEL_ID) {
+    public Recording(Integer ID, String title, Date RELEASE_DATE, Integer ART_ID, Integer LABEL_ID) {
         this.ID = ID;
         this.TITLE = title;
-        this.RELEASE = RELEASE;
+        this.RELEASE_DATE = RELEASE_DATE;
         this.ART_ID = ART_ID;
         this.LABEL_ID = LABEL_ID;
     }
@@ -38,12 +38,12 @@ public class Recording {
         this.TITLE = title;
     }
 
-    public Date getRELEASE() {
-        return RELEASE;
+    public Date getRELEASE_DATE() {
+        return RELEASE_DATE;
     }
 
-    public void setRELEASE(Date RELEASE) {
-        this.RELEASE = RELEASE;
+    public void setRELEASE_DATE(Date RELEASE_DATE) {
+        this.RELEASE_DATE = RELEASE_DATE;
     }
 
     public Integer getART_ID() {
