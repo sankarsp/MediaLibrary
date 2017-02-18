@@ -25,7 +25,7 @@ public class IDGenerator {
             Statement pt = aConnection.createStatement();
 
             ResultSet resultSet = pt.executeQuery(q);
-            ResultSetHelper
+            ResultSetHelper.
         } catch (SQLException e) {
             e.printStackTrace();
         }

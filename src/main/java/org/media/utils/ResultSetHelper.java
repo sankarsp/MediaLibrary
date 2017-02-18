@@ -56,9 +56,13 @@ public class ResultSetHelper {
         return instance;
     }
 
-    protected static Long getNextId(String tableName) {
-        return 0l;
-
+    public static <T> T getFirstItem(ResultSet rs, Class<T> aClass) throws SQLException {
+        rs.next();
+        return (T)rs.getObject(1);
+    }
+    public static Object getFirstItem(ResultSet rs) throws SQLException {
+        rs.next();
+        return rs.getObject(1);
     }
 
 }
