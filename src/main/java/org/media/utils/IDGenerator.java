@@ -1,8 +1,10 @@
 package org.media.utils;
 
+import com.mysql.cj.jdbc.util.ResultSetUtil;
 import org.media.dal.ConnectionManager;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,8 +21,11 @@ public class IDGenerator {
         try {
             final String q ="select id from t_ID where table='"+tableName+"'";
             Connection aConnection = ConnectionManager.getConn();
+
             Statement pt = aConnection.createStatement();
-            pt.executeQuery(q);
+
+            ResultSet resultSet = pt.executeQuery(q);
+            ResultSetHelper
         } catch (SQLException e) {
             e.printStackTrace();
         }
