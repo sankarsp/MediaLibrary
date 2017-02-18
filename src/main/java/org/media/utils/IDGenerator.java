@@ -7,5 +7,9 @@ import java.sql.Connection;
  */
 public class IDGenerator {
 
+    public static Integer giveMeNextId(String tableName, Connection aConnection){
 
+
+        return 1;
+    }
 }

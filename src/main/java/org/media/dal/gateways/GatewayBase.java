@@ -24,9 +24,5 @@ public abstract class GatewayBase {
         return pt.executeQuery(query);
     }
 
-    public static Integer giveMeNextId(String tableName, Connection aConnection){
 
-
-        return 1;
-    }
 }
