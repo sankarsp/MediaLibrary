@@ -9,7 +9,7 @@ public class IDGenerator {
 
 //decision 1 : lets keep IDs in seperate table in DB
     public static Integer giveMeNextId(String tableName, Connection aConnection){
-        final String q ="select ";
+        final String q ="select id from t_ID where table='"+tableName+"'";
 
         return 1;
     }
