@@ -27,9 +27,9 @@ public class IDGenerator {
     }
 
     public static Integer getNextIf(String tableName){
-        Integer result = null;
         AppProperty.load("table.properties");
-
+        Integer result = Integer.valueOf(System.getProperty(tableName+".id"));
         return result;
     }
+
 }
