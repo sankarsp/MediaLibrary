@@ -31,24 +31,10 @@ public class IDGenerator {
 
     public static Integer getNextID(String tableName){
         final String propertypath = "src/main/resources/table.properties";
-        Properties props = new Properties();
-        Integer result = null;
-        try {
-            FileInputStream in = new FileInputStream(new File(propertypath));
-            props.load(in);
-            result =Integer.valueOf(props.getProperty(tableName+".id"));
-            in.close();
-            FileOutputStream os = new FileOutputStream(new File(propertypath));
-            props.setProperty(tableName+".id",String.valueOf(result+1));
-            props.store(os, null);
-            os.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        Properties props = AppProperty.loadProperties(propertypath);
+        Integer result = Integer.valueOf(props.getProperty(tableName+".id"));
+        props.setProperty(tableName+".id",String.valueOf(result+1));
+        AppProperty.save(propertypath,props);
         return result;
     }
 
