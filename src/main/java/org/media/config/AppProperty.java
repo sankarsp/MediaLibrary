@@ -1,8 +1,6 @@
 package org.media.config;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 /**
@@ -29,19 +27,29 @@ public class AppProperty {
         load("src/test/resources/test.properties");
     }
 
-    public static void load(String fileName){
+    public static void load(String filePath){
         Properties p = new Properties();
         try {
-            p.load(new FileInputStream(new File(fileName)));
+            FileInputStream in = new FileInputStream(new File(filePath));
+            p.load(in);
             for(String k:p.stringPropertyNames()){
                 System.setProperty(k,p.getProperty(k));
             }
+            in.close();
         } catch (IOException e) {
             System.out.println("Missing Property file");
         }
 
     }
-    public static void save(String fileName, Properties... properties){
-
+    public static void save(String filePath, Properties properties){
+        try {
+            FileOutputStream os = new FileOutputStream(new File(filePath));
+            properties.store(os, null);
+            os.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
