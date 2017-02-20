@@ -23,6 +23,4 @@ public abstract class GatewayBase {
         Statement pt = aConnection.createStatement();
         return pt.executeQuery(query);
     }
-
-
 }
