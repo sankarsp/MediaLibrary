@@ -26,9 +26,10 @@ public class IDGenerator {
         return result;
     }
 
-    public static Integer getNextIf(String tableName){
+    public static Integer getNextID(String tableName){
         AppProperty.load("table.properties");
         Integer result = Integer.valueOf(System.getProperty(tableName+".id"));
+        System.setProperty(tableName+".id",String.valueOf(result+1));
         return result;
     }
 

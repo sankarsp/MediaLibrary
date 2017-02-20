@@ -41,4 +41,7 @@ public class AppProperty {
         }
 
     }
+    public static void save(String fileName, Properties... properties){
+
+    }
 }
