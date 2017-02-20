@@ -37,8 +37,7 @@ public class AppProperty {
                 System.setProperty(k,p.getProperty(k));
             }
         } catch (IOException e) {
-
-
+            System.out.println("Missing Property file");
         }
 
     }
