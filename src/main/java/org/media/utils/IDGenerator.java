@@ -26,6 +26,7 @@ public class IDGenerator {
     }
 
     public static Integer getNextIf(String tableName){
-
+        Integer result = null;
+        return result;
     }
 }
