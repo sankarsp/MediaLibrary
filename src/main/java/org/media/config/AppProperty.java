@@ -29,7 +29,7 @@ public class AppProperty {
         load("src/test/resources/test.properties");
     }
 
-    private static void load(String fileName){
+    public static void load(String fileName){
         Properties p = new Properties();
         try {
             p.load(new FileInputStream(new File(fileName)));

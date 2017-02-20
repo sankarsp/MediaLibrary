@@ -1,5 +1,6 @@
 package org.media.utils;
 
+import org.media.config.AppProperty;
 import org.media.dal.ConnectionManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,6 +28,8 @@ public class IDGenerator {
 
     public static Integer getNextIf(String tableName){
         Integer result = null;
+        AppProperty.load("table.properties");
+
         return result;
     }
 }
