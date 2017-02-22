@@ -50,7 +50,6 @@ public class ArtistGatewayTest extends TestBase {
 
     @Test
     public void testDeleteAnArtistFromDB(){
-
         Integer testId = 1;
         String name = "sha";
         anArtistGateway.insert(new Artist(testId,name));

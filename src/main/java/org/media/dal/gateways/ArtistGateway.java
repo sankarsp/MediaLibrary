@@ -4,6 +4,7 @@ import static org.media.utils.ResultSetHelper.*;
 
 import org.media.core.Gateway;
 import org.media.model.Artist;
+import org.media.utils.IDGenerator;
 import org.media.utils.ResultSetHelper;
 
 import java.beans.IntrospectionException;
@@ -72,6 +73,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public Integer insert(Artist anArtist) {
+        anArtist.setID(IDGenerator.getNextID(table));
         String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
         try {
             runQuerry(q);
@@ -83,6 +85,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public void remove(Integer id) {
+      //  String q = "DELETE FROM "+table+" where
     }
 
     @Override
