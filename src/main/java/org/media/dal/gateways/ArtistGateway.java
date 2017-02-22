@@ -40,14 +40,15 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     public Artist view(String name) {
         String q = "SELECT * from "+table+" where NAME='"+name+"'";
-
+        Artist found = null;
         try {
-            runQuerry(q);
+            ResultSet resultSet = runQuerry(q);
+            found = (Artist) ResultSetHelper.getFirstItem(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return new Artist();
+        return found;
     }
     public Artist view(Integer id)  {
         String q = "SELECT * from "+table+" where ID="+id.toString();
