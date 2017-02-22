@@ -105,6 +105,12 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
     @Override
     public Integer update(Artist anArtist) {
+        String q = "UPDATE FROM "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
+        try {
+            runQuerry(q);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return anArtist.getID();
     }
 }
