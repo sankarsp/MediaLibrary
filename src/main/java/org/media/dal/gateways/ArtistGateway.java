@@ -74,7 +74,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public Integer insert(Artist anArtist) {
-        anArtist.setID(IDGenerator.getNextID(table));
+        //anArtist.setID(IDGenerator.getNextID(table));
         String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
         int id = 0;
         try {
