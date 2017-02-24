@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.media.TestBase;
 import org.media.dal.gateways.ArtistGateway;
 import org.media.model.Artist;
+import org.media.utils.IDGenerator;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
@@ -69,11 +70,11 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testInsertAnArtistFromDB(){
 
-        Artist anArtist = new Artist(1,"sha");
+        Integer artistId = IDGenerator.getNextID("t_Artist");
+        Artist anArtist = new Artist(artistId,"sha");
 
-        assertEquals(new Integer(1), anArtistGateway.insert(anArtist));
-        assertEquals(anArtist, anArtistGateway.view(1));
-        anArtistGateway.remove(1);
-
+        assertEquals(artistId, anArtistGateway.insert(anArtist));
+        assertEquals(anArtist, anArtistGateway.view(artistId));
+        anArtistGateway.remove(artistId);
     }
 }
