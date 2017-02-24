@@ -28,4 +28,12 @@ public class Artist {
         this.ID = ID;
         this.NAME = NAME;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Artist artist = (Artist) o;
+        if (!getID().equals(artist.getID())) return false;
+        return getNAME().equals(artist.getNAME());
+    }
+
 }
