@@ -60,12 +60,15 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testUpdateAnArtistFromDB(){
-        Artist anArtist = new Artist(1,"sha");
+        Integer artistId = IDGenerator.getNextID("t_Artist");
+        Artist anArtist = new Artist(artistId,"sha");
         anArtistGateway.insert(anArtist);
-        anArtist = new Artist(1,"sarker");
-        assertEquals(new Integer(1),anArtistGateway.update(anArtist));
-        assertEquals(anArtist,anArtistGateway.view(1));
+        anArtist = new Artist(artistId,"sarker");
 
+        assertEquals(artistId,anArtistGateway.update(anArtist));
+        assertTrue(anArtist.equals(anArtistGateway.view(artistId)));
+
+        anArtistGateway.remove(artistId);
     }
     @Test
     public void testInsertAnArtistFromDB(){
