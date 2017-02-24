@@ -27,4 +27,10 @@ public abstract class GatewayBase {
         pt.close();
         return resultSet;
     }
+    protected int executeUpdate(String query) throws SQLException {
+        Statement pt = aConnection.createStatement();
+        int resultSet = pt.executeUpdate(query);
+        pt.close();
+        return resultSet;
+    }
 }
