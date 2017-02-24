@@ -21,7 +21,7 @@ public class ReviewGateway extends GatewayBase implements Gateway<Review> {
         String query = "select* from "+table;
         List<Review> all = null;
         try {
-            all= getAsList(runQuerry(query),Review.class);
+            all= getAsList(executeQuery(query),Review.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -41,7 +41,7 @@ public class ReviewGateway extends GatewayBase implements Gateway<Review> {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class ReviewGateway extends GatewayBase implements Gateway<Review> {
                 +review.getREVIEW()+"\")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

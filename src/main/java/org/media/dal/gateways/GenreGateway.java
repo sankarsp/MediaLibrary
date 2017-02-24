@@ -22,7 +22,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
         String query = "select* from "+table;
         List<Genre> all = null;
         try {
-            all= getAsList(runQuerry(query),Genre.class);
+            all= getAsList(executeQuery(query),Genre.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -42,7 +42,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
         String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class GenreGateway  extends GatewayBase implements Gateway<Genre> {
                 +genre.getID()+", \""+genre.getNAME()+"\")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

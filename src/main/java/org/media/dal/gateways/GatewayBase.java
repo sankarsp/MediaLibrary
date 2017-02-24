@@ -19,18 +19,15 @@ public abstract class GatewayBase {
             e.printStackTrace();
         }
     }
-    protected ResultSet runQuerry(String query) throws SQLException {
+    protected ResultSet executeQuery(String query) throws SQLException {
         Statement pt = aConnection.createStatement();
 
         ResultSet resultSet = pt.executeQuery(query);
-
-        pt.close();
         return resultSet;
     }
     protected int executeUpdate(String query) throws SQLException {
         Statement pt = aConnection.createStatement();
         int resultSet = pt.executeUpdate(query);
-        pt.close();
         return resultSet;
     }
 }

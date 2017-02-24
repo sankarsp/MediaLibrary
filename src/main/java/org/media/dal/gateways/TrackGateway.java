@@ -20,7 +20,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
         String query = "select* from "+table;
         List<Track> all = null;
         try {
-            all= getAsList(runQuerry(query),Track.class);
+            all= getAsList(executeQuery(query),Track.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -40,7 +40,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class TrackGateway extends GatewayBase implements Gateway<Track> {
                 +track.getRECORDING_ID()+")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

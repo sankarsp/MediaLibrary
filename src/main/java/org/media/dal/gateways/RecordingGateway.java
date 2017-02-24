@@ -21,7 +21,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
         String query = "select* from "+table;
         List<Recording> all = null;
         try {
-            all= getAsList(runQuerry(query),Recording.class);
+            all= getAsList(executeQuery(query),Recording.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -41,7 +41,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class RecordingGateway extends GatewayBase implements Gateway<Recording> 
                 recording.getLABEL_ID()+")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

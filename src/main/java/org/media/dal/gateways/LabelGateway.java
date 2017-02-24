@@ -21,7 +21,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
         String query = "select* from "+table;
         List<Label> all = null;
         try {
-            all= getAsList(runQuerry(query),Label.class);
+            all= getAsList(executeQuery(query),Label.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -41,7 +41,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
         String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class LabelGateway  extends GatewayBase implements Gateway<Label> {
                 +label.getID()+", \""+label.getNAME()+"\")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

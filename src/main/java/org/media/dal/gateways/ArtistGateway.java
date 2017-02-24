@@ -4,12 +4,10 @@ import static org.media.utils.ResultSetHelper.*;
 
 import org.media.core.Gateway;
 import org.media.model.Artist;
-import org.media.utils.IDGenerator;
 import org.media.utils.ResultSetHelper;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -23,7 +21,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
         String query = "select* from "+table;
         List<Artist> all = null;
         try {
-            all= getAsList(runQuerry(query),Artist.class);
+            all= getAsList(executeQuery(query),Artist.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -42,7 +40,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
         String q = "SELECT * from "+table+" where NAME='"+name+"'";
         Artist found = null;
         try {
-            ResultSet resultSet = runQuerry(q);
+            ResultSet resultSet = executeQuery(q);
             found = (Artist) ResultSetHelper.getFirstItem(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -55,7 +53,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
         ResultSet resultSet = null;
         Artist result = null;
         try {
-           resultSet =  runQuerry(q);
+           resultSet =  executeQuery(q);
             result = ResultSetHelper.getItem(resultSet,Artist.class);
 
         } catch (SQLException e) {
@@ -89,7 +87,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public void remove(Integer id) {
        String q = "DELETE FROM "+table+" where ID="+id.toString();
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -99,7 +97,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public void remove(Artist artist) {
         String q = "DELETE FROM "+table+" where ID="+artist.getID().toString();
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,7 +106,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public Integer update(Artist anArtist) {
         String q = "UPDATE FROM "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }

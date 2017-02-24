@@ -21,7 +21,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
         String query = "select* from "+table;
         List<Reviewer> all = null;
         try {
-            all= getAsList(runQuerry(query),Reviewer.class);
+            all= getAsList(executeQuery(query),Reviewer.class);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -39,7 +39,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
         String q = "SELECT * from "+table+" where NAME='"+name+"'";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
         String q = "SELECT * from "+table+" where ID="+id.toString();
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class ReviewerGateway extends GatewayBase implements Gateway<Reviewer> {
                 +reviewer.getNAME()+"\")";
 
         try {
-            runQuerry(q);
+            executeQuery(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
