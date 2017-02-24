@@ -21,6 +21,10 @@ public abstract class GatewayBase {
     }
     protected ResultSet runQuerry(String query) throws SQLException {
         Statement pt = aConnection.createStatement();
-        return pt.executeQuery(query);
+
+        ResultSet resultSet = pt.executeQuery(query);
+
+        pt.close();
+        return resultSet;
     }
 }
