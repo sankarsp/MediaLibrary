@@ -76,12 +76,13 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public Integer insert(Artist anArtist) {
         anArtist.setID(IDGenerator.getNextID(table));
         String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
+        int id = 0;
         try {
-            runQuerry(q);
+           id =  executeUpdate(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return anArtist.getID();
+        return id;
     }
 
     @Override
