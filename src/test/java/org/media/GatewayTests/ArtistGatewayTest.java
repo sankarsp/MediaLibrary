@@ -48,7 +48,6 @@ public class ArtistGatewayTest extends TestBase {
             assertEquals(found.getNAME(), artist.getNAME());
         }
     }
-
     @Test
     public void testDeleteAnArtistFromDB(){
         Integer testId = 1;
@@ -63,10 +62,8 @@ public class ArtistGatewayTest extends TestBase {
         Artist anArtist = new Artist(artistId,"sha");
         anArtistGateway.insert(anArtist);
         anArtist = new Artist(artistId,"sarker");
-
         assertEquals(artistId,anArtistGateway.update(anArtist));
         assertTrue(anArtist.equals(anArtistGateway.view(artistId)));
-
         anArtistGateway.remove(artistId);
     }
     @Test
