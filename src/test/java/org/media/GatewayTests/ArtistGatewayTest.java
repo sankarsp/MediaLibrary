@@ -56,7 +56,6 @@ public class ArtistGatewayTest extends TestBase {
         anArtistGateway.insert(new Artist(testId,name));
         anArtistGateway.remove(1);
         assertNull(anArtistGateway.view(1));
-
     }
     @Test
     public void testUpdateAnArtistFromDB(){
