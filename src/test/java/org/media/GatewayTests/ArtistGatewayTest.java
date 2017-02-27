@@ -51,12 +51,13 @@ public class ArtistGatewayTest extends TestBase {
     public void testDeleteAnArtistFromDB() throws SQLException {
         Integer testId = IDGenerator.getNextID(ArtistGateway.TABLE);;
         String name = "DeteleThis";
-        anArtistGateway.insert(new Artist(testId,name));
-        anArtistGateway.remove(testId);
-        String q = "DELETE FROM "+ ArtistGateway.TABLE +" where ID="+testId;
+
+       System.out.print( anArtistGateway.insert(new Artist(testId,name)));
+       // anArtistGateway.remove(testId);
+        String q = "SELECT * from "+ ArtistGateway.TABLE +" where ID="+testId;
         Statement pt = aConnection.createStatement();
-        int resultSet = pt.executeUpdate(q);
-        assertEquals(0,resultSet);
+        ResultSet resultSet = pt.executeQuery(q);
+        assertNull(resultSet);
     }
     @Test
     public void testUpdateAnArtistFromDB(){
@@ -71,9 +72,9 @@ public class ArtistGatewayTest extends TestBase {
     @Test
     public void testInsertAnArtistFromDB(){
         Integer artistId = IDGenerator.getNextID(ArtistGateway.TABLE);
-        Artist anArtist = new Artist(artistId,"sha");
+        Artist anArtist = new Artist(artistId,"inserted");
         assertEquals(1, anArtistGateway.insert(anArtist).intValue());
         assertEquals(anArtist.getNAME(), anArtistGateway.view(artistId).getNAME());
-        anArtistGateway.remove(artistId);
+        //anArtistGateway.remove(artistId);
     }
 }
