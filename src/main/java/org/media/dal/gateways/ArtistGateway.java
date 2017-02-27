@@ -97,7 +97,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     public void remove(Artist artist) {
         String q = "DELETE FROM "+ TABLE +" where ID="+artist.getID().toString();
         try {
-            executeQuery(q);
+            executeUpdate(q);
         } catch (SQLException e) {
             e.printStackTrace();
         }
