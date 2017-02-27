@@ -20,6 +20,7 @@ import java.util.List;
 public class ArtistGatewayTest extends TestBase {
 
     private ArtistGateway anArtistGateway;
+    
 
     @Before
     public void init(){
@@ -50,7 +51,7 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testDeleteAnArtistFromDB(){
-        Integer testId = 1;
+        Integer testId = IDGenerator.getNextID(ArtistGateway.table);;
         String name = "sha";
         anArtistGateway.insert(new Artist(testId,name));
         anArtistGateway.remove(1);
@@ -58,7 +59,7 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testUpdateAnArtistFromDB(){
-        Integer artistId = IDGenerator.getNextID("t_Artist");
+        Integer artistId = IDGenerator.getNextID(ArtistGateway.table);
         Artist anArtist = new Artist(artistId,"sha");
         anArtistGateway.insert(anArtist);
         anArtist = new Artist(artistId,"sarker");
@@ -68,7 +69,7 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testInsertAnArtistFromDB(){
-        Integer artistId = IDGenerator.getNextID("t_Artist");
+        Integer artistId = IDGenerator.getNextID(ArtistGateway.table);
         Artist anArtist = new Artist(artistId,"sha");
         assertEquals(1, anArtistGateway.insert(anArtist).intValue());
         assertEquals(anArtist.getNAME(), anArtistGateway.view(artistId).getNAME());

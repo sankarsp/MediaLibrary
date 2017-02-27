@@ -16,7 +16,7 @@ import java.util.List;
  * Created by shantonu on 1/31/17.
  */
 public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
-    private static final String table="t_Artist";
+    public static final String table="t_Artist";
     public List<Artist> viewAll(){
         String query = "select* from "+table;
         List<Artist> all = null;
