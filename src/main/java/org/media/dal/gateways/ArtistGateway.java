@@ -16,9 +16,9 @@ import java.util.List;
  * Created by shantonu on 1/31/17.
  */
 public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
-    public static final String table="t_Artist";
+    public static final String TABLE ="t_Artist";
     public List<Artist> viewAll(){
-        String query = "select* from "+table;
+        String query = "select* from "+ TABLE;
         List<Artist> all = null;
         try {
             all= getAsList(executeQuery(query),Artist.class);
@@ -37,7 +37,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
 
     public Artist view(String name) {
-        String q = "SELECT * from "+table+" where NAME='"+name+"'";
+        String q = "SELECT * from "+ TABLE +" where NAME='"+name+"'";
         Artist found = null;
         try {
             ResultSet resultSet = executeQuery(q);
@@ -49,7 +49,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
         return found;
     }
     public Artist view(Integer id)  {
-        String q = "SELECT * from "+table+" where ID="+id.toString();
+        String q = "SELECT * from "+ TABLE +" where ID="+id.toString();
         ResultSet resultSet = null;
         Artist result = null;
         try {
@@ -73,7 +73,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     @Override
     public Integer insert(Artist anArtist) {
         //anArtist.setID(IDGenerator.getNextID(table));
-        String q = "INSERT INTO "+table+" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
+        String q = "INSERT INTO "+ TABLE +" VALUES ("+anArtist.getID()+", \""+anArtist.getNAME()+"\")";
         int id = 0;
         try {
            id =  executeUpdate(q);
@@ -85,7 +85,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public void remove(Integer id) {
-       String q = "DELETE FROM "+table+" where ID="+id.toString();
+       String q = "DELETE FROM "+ TABLE +" where ID="+id.toString();
         try {
             executeUpdate(q);
         } catch (SQLException e) {
@@ -95,7 +95,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
 
     @Override
     public void remove(Artist artist) {
-        String q = "DELETE FROM "+table+" where ID="+artist.getID().toString();
+        String q = "DELETE FROM "+ TABLE +" where ID="+artist.getID().toString();
         try {
             executeQuery(q);
         } catch (SQLException e) {
@@ -104,7 +104,7 @@ public class ArtistGateway extends GatewayBase implements Gateway<Artist> {
     }
     @Override
     public Integer update(Artist anArtist) {
-        String q="UPDATE "+table+" SET NAME='"+anArtist.getNAME()+"' WHERE ID="+anArtist.getID();
+        String q="UPDATE "+ TABLE +" SET NAME='"+anArtist.getNAME()+"' WHERE ID="+anArtist.getID();
         try {
             executeUpdate(q);
         } catch (SQLException e) {

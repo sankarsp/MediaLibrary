@@ -9,19 +9,17 @@ import org.media.dal.gateways.ArtistGateway;
 import org.media.model.Artist;
 import org.media.utils.IDGenerator;
 
-import java.beans.IntrospectionException;
-import java.lang.reflect.InvocationTargetException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by shantonu on 1/31/17.
  */
 public class ArtistGatewayTest extends TestBase {
-
     private ArtistGateway anArtistGateway;
-    
-
     @Before
     public void init(){
         anArtistGateway = new ArtistGateway();
@@ -50,16 +48,19 @@ public class ArtistGatewayTest extends TestBase {
         }
     }
     @Test
-    public void testDeleteAnArtistFromDB(){
-        Integer testId = IDGenerator.getNextID(ArtistGateway.table);;
-        String name = "sha";
+    public void testDeleteAnArtistFromDB() throws SQLException {
+        Integer testId = IDGenerator.getNextID(ArtistGateway.TABLE);;
+        String name = "DeteleThis";
         anArtistGateway.insert(new Artist(testId,name));
-        anArtistGateway.remove(1);
-        assertNull(anArtistGateway.view(1));
+        anArtistGateway.remove(testId);
+        String q = "DELETE FROM "+ ArtistGateway.TABLE +" where ID="+testId;
+        Statement pt = aConnection.createStatement();
+        int resultSet = pt.executeUpdate(q);
+        assertEquals(0,resultSet);
     }
     @Test
     public void testUpdateAnArtistFromDB(){
-        Integer artistId = IDGenerator.getNextID(ArtistGateway.table);
+        Integer artistId = IDGenerator.getNextID(ArtistGateway.TABLE);
         Artist anArtist = new Artist(artistId,"sha");
         anArtistGateway.insert(anArtist);
         anArtist = new Artist(artistId,"sarker");
@@ -69,7 +70,7 @@ public class ArtistGatewayTest extends TestBase {
     }
     @Test
     public void testInsertAnArtistFromDB(){
-        Integer artistId = IDGenerator.getNextID(ArtistGateway.table);
+        Integer artistId = IDGenerator.getNextID(ArtistGateway.TABLE);
         Artist anArtist = new Artist(artistId,"sha");
         assertEquals(1, anArtistGateway.insert(anArtist).intValue());
         assertEquals(anArtist.getNAME(), anArtistGateway.view(artistId).getNAME());
