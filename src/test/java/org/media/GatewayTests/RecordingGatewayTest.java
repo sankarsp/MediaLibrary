@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class RecordingGatewayTest {
     @Test
-    public void testGetARecordingtFromDB(){
+    public void testGetARecordingFromDB(){
 
     }
     @Test
