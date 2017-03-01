@@ -37,5 +37,6 @@ public class GenreGatewayTest extends TestBase{
     }
     @Test
     public void testDeleteAGenreFromDB(){}
-
+    @Test
+    public void testInsertAGenreFromDB(){}
 }
