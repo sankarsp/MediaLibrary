@@ -31,8 +31,11 @@ public class GenreGatewayTest extends TestBase{
             assertEquals(found.getNAME(), Genre.getNAME());
         }
     }
-    public void testGetAnGenretFromDB(){
+    @Test
+    public void testGetAGenretFromDB(){
 
     }
+    @Test
+    public void testDeleteAGenreFromDB(){}
 
 }
