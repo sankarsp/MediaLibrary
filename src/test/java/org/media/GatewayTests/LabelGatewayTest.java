@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class LabelGatewayTest {
     @Test
-    public void testGetALabeltFromDB(){
+    public void testGetALabelFromDB(){
 
     }
     @Test
