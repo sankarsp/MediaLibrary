@@ -32,7 +32,7 @@ public class GenreGatewayTest extends TestBase{
         }
     }
     @Test
-    public void testGetAGenretFromDB(){
+    public void testGetAGenreFromDB(){
 
     }
     @Test
