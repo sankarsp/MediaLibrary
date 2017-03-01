@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class ReviewGatewayTest {
     @Test
-    public void testGetAReviewtFromDB(){
+    public void testGetAReviewFromDB(){
 
     }
     @Test
