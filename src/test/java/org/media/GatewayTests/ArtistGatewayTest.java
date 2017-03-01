@@ -25,6 +25,7 @@ public class ArtistGatewayTest extends TestBase {
         anArtistGateway = new ArtistGateway();
     }
 
+    //todo
     @Test
     public void testGetAnArtistFromDB(){
         Artist artist = null;

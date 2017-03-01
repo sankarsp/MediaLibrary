@@ -13,6 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by shantonu on 2/25/17.
+ * todo
  */
 public class GenreGatewayTest extends TestBase{
     private GenreGateway aGenreGateway;
@@ -29,6 +30,9 @@ public class GenreGatewayTest extends TestBase{
             assertEquals(found.getID(), Genre.getID());
             assertEquals(found.getNAME(), Genre.getNAME());
         }
+    }
+    public void testGetAnGenretFromDB(){
+
     }
 
 }
