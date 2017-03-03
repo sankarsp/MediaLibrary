@@ -61,4 +61,20 @@ public class Recording {
     public void setLABEL_ID(Integer LABEL_ID) {
         this.LABEL_ID = LABEL_ID;
     }
+
+    @Override
+    public boolean equals(Object o) {
+
+        Recording recording = (Recording) o;
+
+        if (getID() != null ? !getID().equals(recording.getID()) : recording.getID() != null) return false;
+        if (getTITLE() != null ? !getTITLE().equals(recording.getTITLE()) : recording.getTITLE() != null) return false;
+        if (getRELEASE_DATE() != null ? !getRELEASE_DATE().equals(recording.getRELEASE_DATE()) : recording.getRELEASE_DATE() != null)
+            return false;
+        if (getART_ID() != null ? !getART_ID().equals(recording.getART_ID()) : recording.getART_ID() != null)
+            return false;
+        return getLABEL_ID() != null ? getLABEL_ID().equals(recording.getLABEL_ID()) : recording.getLABEL_ID() == null;
+    }
+
+
 }
