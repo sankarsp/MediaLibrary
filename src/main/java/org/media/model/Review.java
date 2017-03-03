@@ -57,4 +57,22 @@ public class Review {
         this.RATING = RATING;
         this.REVIEW = REVIEW;
     }
+
+    /*public boolean compare(Review aReview) {
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        Review review = (Review) o;
+        if (getID() != null ? !getID().equals(review.getID()) : review.getID() != null) return false;
+        if (getREVIEWER_ID() != null ? !getREVIEWER_ID().equals(review.getREVIEWER_ID()) : review.getREVIEWER_ID() != null)
+            return false;
+        if (getRECORDING_ID() != null ? !getRECORDING_ID().equals(review.getRECORDING_ID()) : review.getRECORDING_ID() != null)
+            return false;
+        if (getRATING() != null ? !getRATING().equals(review.getRATING()) : review.getRATING() != null) return false;
+        return getREVIEW() != null ? getREVIEW().equals(review.getREVIEW()) : review.getREVIEW() == null;
+
+    }
+
+
 }
