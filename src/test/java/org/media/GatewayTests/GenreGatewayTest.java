@@ -5,9 +5,7 @@ import org.junit.Test;
 import org.media.TestBase;
 import org.media.dal.gateways.GenreGateway;
 import org.media.model.Genre;
-
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
