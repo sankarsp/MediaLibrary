@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by shantonu on 2/25/17.
- * todo
+ * todo, error
  */
 public class GenreGatewayTest extends TestBase{
     private GenreGateway aGenreGateway;
