@@ -13,3 +13,7 @@ Complete a project end to end with unit tests
 #Test Execution 
 - Maven management 
 - CI Run
+
+#Run With Maven 
+- mvn clean test
+- Mvn clean verify
