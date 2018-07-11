@@ -17,3 +17,6 @@ Complete a project end to end with unit tests
 #Run With Maven 
 - mvn clean test
 - Mvn clean verify
+
+#To do
+Make it spring boot app
