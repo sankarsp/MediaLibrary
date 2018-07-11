@@ -10,13 +10,14 @@ Complete a project end to end with unit tests
 #Test Model 
 - V Diagram of testing
 
-#Test Execution 
+# Test Execution 
 - Maven management 
 - CI Run
 
-#Run With Maven 
+# Run With Maven 
 - mvn clean test
 - Mvn clean verify
 
-#To do
-Make it spring boot app
+# To do
+
+- Make it spring boot app
