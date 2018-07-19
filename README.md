@@ -21,4 +21,5 @@ Complete a project end to end with unit tests
 # To do
 
 - Make it spring boot app
-- Sprint test
+- Spring test
+- spring MVC
