@@ -19,8 +19,8 @@ Complete a project end to end with unit tests
 - Mvn clean verify
 
 # To do
-
-- Make it spring boot app
+- Make it spring boot app webservice
 - Spring test
 - spring MVC
 - Unit test  & performance tests 
+- Mobile App to access
