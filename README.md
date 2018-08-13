@@ -25,3 +25,7 @@ Complete a project end to end with unit tests
 - spring MVC
 - Unit test  & performance tests 
 - Mobile App to access
+
+# ER Diagram
+
+# Component Diagram
