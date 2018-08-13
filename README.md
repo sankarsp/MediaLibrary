@@ -29,3 +29,5 @@ Complete a project end to end with unit tests
 # ER Diagram
 
 # Component Diagram
+
+# Class Diagram
