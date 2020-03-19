@@ -28,6 +28,8 @@ Complete a project end to end with unit tests
 - Mobile App to access
 
 # ER Diagram
+- Check the doc folder 
+
 
 # Component Diagram
 
