@@ -1,8 +1,9 @@
 # MediaLibrary
 Media Library : A small project to practice unit testing in different layers. 
 
-#Target 
-Complete a project end to end with unit tests 
+# Target 
+- Complete a project end to end with unit tests 
+- Following V diagram of testing
 
 # BOOK
  https://www.amazon.com/Test-Driven-Development-Microsoft%C2%AE-Developer-Reference/dp/0735619484
