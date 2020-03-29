@@ -16,9 +16,9 @@ Complete a project end to end with unit tests
 - CI Run
 
 # Run With Maven 
-- mvn clean test
-- mvn clean verify
-- mvn site
+- Running Unit Test: mvn clean test
+- Running integration tests: mvn clean verify
+- See test results in Allure : mvn site
 
 # To do
 - Make it spring boot app webservice
@@ -27,10 +27,3 @@ Complete a project end to end with unit tests
 - Unit test  & performance tests 
 - Mobile App to access
 
-# ER Diagram
-- Check the doc folder 
-
-
-# Component Diagram
-
-# Class Diagram
