@@ -10,7 +10,7 @@ Media Library : A small project to practice unit testing in different layers.
  
 # Test Model 
 - V Diagram of testing 
-![V-Diagram](./doc/vdiagramOftesting.gif)
+![V-Diagram](./docs/vdiagramOftesting.gif)
 
 
 (https://insights.sei.cmu.edu/sei_blog/2013/11/using-v-models-for-testing.html) 
